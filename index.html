@@ -90,6 +90,7 @@
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
+            overflow-x: hidden; /* Prevenir scroll horizontal en todo el body */
         }
 
         /* Loader */
@@ -654,7 +655,7 @@
             }
         }
 
-        /* Footer */
+        /* Footer - FIXED PARA MÓVIL */
         footer {
             background-color: var(--vivid-royal);
             color: white;
@@ -665,6 +666,7 @@
             border-top-right-radius: 20px;
             border-top: 1px solid var(--border);
             box-shadow: var(--shadow);
+            overflow: hidden; /* Prevenir desbordamiento */
         }
 
         [data-theme="dark"] footer {
@@ -675,8 +677,10 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            flex-wrap: wrap; /* Permitir que se envuelvan */
+            gap: 1rem; /* Espacio reducido para móvil */
             margin: 1.5rem 0;
+            padding: 0 10px;
         }
 
         .footer-links a {
@@ -689,6 +693,8 @@
             padding: 0.5rem 1rem;
             border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap; /* Evitar que el texto se rompa */
+            flex-shrink: 0; /* Permitir que se reduzcan si es necesario */
         }
 
         [data-theme="dark"] .footer-links a {
@@ -710,6 +716,8 @@
         .copyright {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
+            word-wrap: break-word; /* Permitir que el texto se rompa */
+            overflow-wrap: break-word;
         }
 
         [data-theme="dark"] .copyright {
@@ -925,6 +933,8 @@
             z-index: 1000;
             animation: slideUp 0.3s ease, fadeOut 0.3s ease 2.7s;
             font-weight: 500;
+            max-width: 90%;
+            word-wrap: break-word;
         }
 
         @keyframes slideUp {
@@ -941,6 +951,158 @@
         @keyframes fadeOut {
             from { opacity: 1; }
             to { opacity: 0; }
+        }
+
+        /* Media Queries para móvil */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .name {
+                font-size: 2rem;
+                padding: 0 10px;
+            }
+            
+            .title {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .header-subtitle {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+            
+            .experience-badge {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                margin: 1rem 10px 0;
+            }
+            
+            .card {
+                padding: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .skills-list {
+                gap: 0.5rem;
+            }
+            
+            .skill-tag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .company {
+                font-size: 1.1rem;
+            }
+            
+            .role {
+                font-size: 1rem;
+            }
+            
+            .footer-links {
+                gap: 0.5rem; /* Espacio aún más reducido en móvil */
+                padding: 0 5px;
+            }
+            
+            .footer-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+            
+            .scroll-top {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .theme-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+            
+            /* Ajustar los elementos flotantes para móvil */
+            .floating-element {
+                display: none; /* Ocultar en móvil para mejor rendimiento */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .footer-links {
+                flex-direction: column; /* Cambiar a columna en pantallas muy pequeñas */
+                align-items: center;
+                gap: 0.8rem;
+            }
+            
+            .footer-links a {
+                width: 100%;
+                max-width: 200px;
+                justify-content: center;
+            }
+            
+            .footer-links a i {
+                font-size: 1.1rem;
+            }
+            
+            .container footer p {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+            
+            .copyright {
+                font-size: 0.8rem;
+                padding: 0 10px;
+            }
+            
+            .experience-badge {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.9rem;
+            }
+            
+            .card {
+                padding: 1rem;
+            }
+        }
+
+        /* Para pantallas muy pequeñas (iPhone SE, etc.) */
+        @media (max-width: 320px) {
+            .name {
+                font-size: 1.5rem;
+            }
+            
+            .title {
+                font-size: 0.9rem;
+            }
+            
+            .header-subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .card h2 {
+                font-size: 1.1rem;
+            }
+            
+            .skill-tag {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.6rem;
+            }
+            
+            .footer-links a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
         }
     </style>
 </head>
@@ -1147,16 +1309,6 @@
                             that increased team productivity.
                         </p>
                     </div>
-					<!-- 
-                    <div class="experience-item">
-                        <div class="company">Mind Producciones</div>
-                        <div class="role">Art Director</div>
-                        <div class="duration"><i class="far fa-clock"></i> 2011 - 2016</div>
-                        <p class="description">
-                            Design & Production: Lead team producing festivals.
-                        </p>
-                    </div>
-					 -->
                 </div>
 
                 <!-- Key Technical Roles Card -->
