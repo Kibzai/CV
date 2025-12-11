@@ -4,35 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonio Kibsa - Developer Portfolio</title>
+    <title>Antonio Kibsaim - Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Light Theme */
-            --primary: #2563eb;
-            --secondary: #1d4ed8;
-            --card-bg: #ffffff;
-            --body-bg: #f1f5f9;
-            --text: #1e293b;
-            --text-secondary: #64748b;
-            --border: #e2e8f0;
+            /* Light Theme - Nueva Paleta */
+            --black: #000000;
+            --prussian-blue: #14213d;
+            --orange: #fca311;
+            --alabaster-grey: #e5e5e5;
+            --white: #ffffff;
+
+            /* Asignación de variables para tema claro */
+            --primary: var(--orange);
+            --secondary: var(--prussian-blue);
+            --card-bg: var(--white);
+            --body-bg: var(--alabaster-grey);
+            --text: var(--prussian-blue);
+            --text-secondary: #5a6b8c;
+            --border: #d1d9e6;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
             --border-radius: 12px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            /* Dark Theme */
-            --primary: #3b82f6;
-            --secondary: #60a5fa;
-            --card-bg: #1e293b;
-            --body-bg: #0f172a;
-            --text: #f8fafc;
-            --text-secondary: #94a3b8;
-            --border: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            /* Dark Theme - Nueva Paleta */
+            --sky-blue-light: #8ecae6;
+            --blue-green: #219ebc;
+            --deep-space-blue: #023047;
+            --amber-flame: #ffb703;
+            --princeton-orange: #fb8500;
+
+            /* Asignación de variables para tema oscuro */
+            --primary: var(--amber-flame);
+            --secondary: var(--princeton-orange);
+            --card-bg: var(--deep-space-blue);
+            --body-bg: #011c2e;
+            --text: var(--sky-blue-light);
+            --text-secondary: #8ecae6;
+            --border: #035177;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -122,6 +136,8 @@
         .theme-btn:hover {
             transform: rotate(30deg) scale(1.1);
             box-shadow: var(--shadow-hover);
+            background: var(--primary);
+            color: var(--card-bg);
         }
 
         .theme-btn .fa-sun {
@@ -138,8 +154,8 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            background: linear-gradient(135deg, var(--prussian-blue), var(--black));
+            color: var(--white);
             padding: 2.5rem 0;
             text-align: center;
             border-bottom-left-radius: 30px;
@@ -148,6 +164,10 @@
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
+        }
+
+        [data-theme="dark"] header {
+            background: linear-gradient(135deg, var(--deep-space-blue), var(--blue-green));
         }
 
         header::before {
@@ -184,6 +204,17 @@
             opacity: 0.9;
             margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--orange);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        [data-theme="dark"] .header-subtitle {
+            color: var(--amber-flame);
         }
 
         @keyframes fadeInDown {
@@ -316,18 +347,26 @@
             left: 50%;
             width: 5px;
             height: 5px;
-            background: rgba(59, 130, 246, 0.5);
+            background: rgba(252, 163, 17, 0.5);
             opacity: 0;
             border-radius: 100%;
             transform: scale(1, 1) translate(-50%);
             transform-origin: 50% 50%;
         }
 
+        [data-theme="dark"] .skill-tag::after {
+            background: rgba(255, 183, 3, 0.5);
+        }
+
         .skill-tag:hover {
             background: var(--primary);
-            color: white;
+            color: var(--card-bg);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 5px 15px rgba(252, 163, 17, 0.3);
+        }
+
+        [data-theme="dark"] .skill-tag:hover {
+            box-shadow: 0 5px 15px rgba(255, 183, 3, 0.4);
         }
 
         .skill-tag:hover::after {
@@ -501,8 +540,8 @@
 
         /* Footer */
         footer {
-            background-color: var(--card-bg);
-            color: var(--text);
+            background-color: var(--prussian-blue);
+            color: var(--white);
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
@@ -510,6 +549,11 @@
             border-top-right-radius: 20px;
             border-top: 1px solid var(--border);
             box-shadow: var(--shadow);
+        }
+
+        [data-theme="dark"] footer {
+            background-color: var(--deep-space-blue);
+            color: var(--sky-blue-light);
         }
 
         .footer-links {
@@ -520,7 +564,7 @@
         }
 
         .footer-links a {
-            color: var(--text-secondary);
+            color: var(--alabaster-grey);
             text-decoration: none;
             transition: var(--transition);
             display: flex;
@@ -528,18 +572,32 @@
             gap: 8px;
             padding: 0.5rem 1rem;
             border-radius: 25px;
-            border: 1px solid var(--border);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        [data-theme="dark"] .footer-links a {
+            color: var(--sky-blue-light);
         }
 
         .footer-links a:hover {
-            color: var(--primary);
-            background: var(--body-bg);
+            color: var(--orange);
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-3px);
+            border-color: var(--orange);
+        }
+
+        [data-theme="dark"] .footer-links a:hover {
+            color: var(--amber-flame);
+            border-color: var(--amber-flame);
         }
 
         .copyright {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        [data-theme="dark"] .copyright {
+            color: rgba(142, 202, 230, 0.7);
         }
 
         /* Scroll to Top */
@@ -549,8 +607,8 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: var(--primary);
-            color: white;
+            background: var(--orange);
+            color: var(--prussian-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -560,7 +618,13 @@
             visibility: hidden;
             transition: var(--transition);
             z-index: 100;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 4px 15px rgba(252, 163, 17, 0.4);
+        }
+
+        [data-theme="dark"] .scroll-top {
+            background: var(--amber-flame);
+            color: var(--deep-space-blue);
+            box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
         }
 
         .scroll-top.show {
@@ -570,7 +634,11 @@
 
         .scroll-top:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 8px 20px rgba(252, 163, 17, 0.6);
+        }
+
+        [data-theme="dark"] .scroll-top:hover {
+            box-shadow: 0 8px 20px rgba(255, 183, 3, 0.6);
         }
 
         /* Floating Elements */
@@ -578,10 +646,14 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(252, 163, 17, 0.1);
             border-radius: 50%;
             animation: float 20s infinite linear;
             z-index: -1;
+        }
+
+        [data-theme="dark"] .floating-element {
+            background: rgba(255, 183, 3, 0.1);
         }
 
         @keyframes float {
@@ -602,6 +674,24 @@
             75% {
                 transform: translate(-100px, 100px) rotate(270deg);
             }
+        }
+
+        /* Color Palette Display (opcional) */
+        .palette-display {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .palette-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 5px;
+            display: inline-block;
+            border: 1px solid var(--border);
         }
     </style>
 </head>
@@ -639,7 +729,7 @@
         <div class="container">
             <h1 class="name">ANTONIO KIBSAIM MEJIA ZEPEDA</h1>
             <p class="title">Curriculum Vitae 2025/2026</p>
-            <p>Fullstack Developer | DevOps | AI/ML Specialist</p>
+            <p class="header-subtitle">Fullstack Developer | DevOps | Project Management</p>
         </div>
     </header>
 
@@ -652,30 +742,14 @@
                     <h2><i class="fas fa-code"></i> Programming Languages</h2>
                     <div class="skills-list">
                         <span class="skill-tag">Javascript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Rust</span>
                         <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Deno</span>
+                        <span class="skill-tag">Rust</span>
                         <span class="skill-tag">C++</span>
                         <span class="skill-tag">C</span>
-                        <span class="skill-tag">Deno</span>
                     </div>
                 </div>
-
-                <!-- Specializations Card -->
-                <div class="card">
-                    <h2><i class="fas fa-brain"></i> Specializations</h2>
-                    <div class="skills-list">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Image Classification</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Time-Series</span>
-                        <span class="skill-tag">Anomaly Detection</span>
-                        <span class="skill-tag">Reinforcement Learning</span>
-                        <span class="skill-tag">Generative Models</span>
-                        <span class="skill-tag">Transfer Learning</span>
-                    </div>
-                </div>
-
                 <!-- Technologies Card -->
                 <div class="card">
                     <h2><i class="fas fa-tools"></i> Technologies</h2>
@@ -691,6 +765,21 @@
                         <span class="skill-tag">Unity/Unreal</span>
                     </div>
                 </div>
+                <!-- Specializations Card -->
+                <div class="card">
+                    <h2><i class="fas fa-brain"></i> Specializations</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Image Classification</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Time-Series</span>
+                        <span class="skill-tag">Anomaly Detection</span>
+                        <span class="skill-tag">Reinforcement Learning</span>
+                        <span class="skill-tag">Generative Models</span>
+                        <span class="skill-tag">Transfer Learning</span>
+                    </div>
+                </div>
+
 
                 <!-- Languages Card -->
                 <div class="card">
@@ -734,7 +823,7 @@
                     <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
 
                     <div class="experience-item">
-                        <div class="company">HSPC (HSBC)</div>
+                        <div class="company">HSBC (GSC)</div>
                         <div class="role">Fullstack Developer</div>
                         <div class="duration"><i class="far fa-clock"></i> Global Service Center</div>
                         <p class="description">Architecture, Docker, Internal Banking Services. Pipelines, Kubernetes,
@@ -955,12 +1044,13 @@
                 left: 50%;
                 transform: translateX(-50%);
                 background: var(--primary);
-                color: white;
+                color: var(--card-bg);
                 padding: 12px 24px;
                 border-radius: 25px;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
                 z-index: 1000;
                 animation: slideUp 0.3s ease, fadeOut 0.3s ease 2.7s;
+                font-weight: 500;
             `;
 
             document.body.appendChild(notification);
@@ -992,10 +1082,6 @@
                 to { opacity: 0; }
             }
             
-            .notification {
-                font-weight: 500;
-            }
-            
             @keyframes ripple-animation {
                 to {
                     transform: scale(4);
@@ -1006,7 +1092,7 @@
         document.head.appendChild(style);
 
         // ========== TYPING ANIMATION FOR HEADER ==========
-        const titleElement = document.querySelector('.title + p');
+        const titleElement = document.querySelector('.header-subtitle');
         if (titleElement) {
             const originalText = titleElement.textContent;
             titleElement.textContent = '';
@@ -1023,6 +1109,32 @@
             // Start typing after loader
             setTimeout(typeWriter, 1800);
         }
+
+        // ========== SHOW CURRENT COLOR PALETTE (para desarrollo) ==========
+        // Descomenta si quieres ver las paletas de colores en la esquina
+        /*
+        function showColorPalette() {
+            const palette = document.createElement('div');
+            palette.className = 'palette-display';
+            palette.id = 'colorPalette';
+            
+            const lightColors = ['#000000', '#14213d', '#fca311', '#e5e5e5', '#ffffff'];
+            const darkColors = ['#8ecae6', '#219ebc', '#023047', '#ffb703', '#fb8500'];
+            
+            const currentColors = document.documentElement.getAttribute('data-theme') === 'dark' ? darkColors : lightColors;
+            
+            currentColors.forEach(color => {
+                const colorDiv = document.createElement('div');
+                colorDiv.className = 'palette-color';
+                colorDiv.style.backgroundColor = color;
+                palette.appendChild(colorDiv);
+            });
+            
+            document.body.appendChild(palette);
+        }
+        
+        showColorPalette();
+        */
     </script>
 </body>
 
