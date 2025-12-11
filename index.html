@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonio Kibsaim - Developer Portfolio</title>
+    <title>Antonio Kibsaim - Senior Fullstack Developer</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -140,6 +141,11 @@
             color: var(--card-bg);
         }
 
+        .theme-btn:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 3px;
+        }
+
         .theme-btn .fa-sun {
             display: none;
         }
@@ -211,10 +217,63 @@
             color: var(--orange);
             font-weight: 500;
             margin-top: 0.5rem;
+            position: relative;
         }
 
         [data-theme="dark"] .header-subtitle {
             color: var(--amber-flame);
+        }
+
+        /* Experience Badge - Mejorado */
+        .experience-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange), var(--prussian-blue));
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 15px rgba(252, 163, 17, 0.4);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .experience-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .experience-badge:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(252, 163, 17, 0.6);
+        }
+
+        .experience-badge:hover::before {
+            left: 100%;
+        }
+
+        .experience-badge:focus {
+            outline: 3px solid var(--white);
+            outline-offset: 3px;
+        }
+
+        [data-theme="dark"] .experience-badge {
+            background: linear-gradient(135deg, var(--amber-flame), var(--deep-space-blue));
+            box-shadow: 0 6px 15px rgba(255, 183, 3, 0.4);
+        }
+
+        [data-theme="dark"] .experience-badge:hover {
+            box-shadow: 0 10px 25px rgba(255, 183, 3, 0.6);
         }
 
         @keyframes fadeInDown {
@@ -284,6 +343,26 @@
             border: 1px solid var(--border);
             position: relative;
             overflow: hidden;
+            animation: slideUpFade 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        /* Animación escalonada para cards */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .card::before {
@@ -308,7 +387,7 @@
         }
 
         .card h2 {
-            color: var(--primary);
+            color: var(--text);
             margin-bottom: 1.2rem;
             padding-bottom: 0.7rem;
             border-bottom: 2px solid var(--border);
@@ -328,12 +407,12 @@
 
         .skill-tag {
             background: var(--body-bg);
-            color: var(--primary);
+            color: var(--text);
             padding: 0.5rem 1rem;
             border-radius: 25px;
             font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             cursor: pointer;
             transition: var(--transition);
             position: relative;
@@ -360,9 +439,14 @@
 
         .skill-tag:hover {
             background: var(--primary);
-            color: var(--card-bg);
+            color: var(--white);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(252, 163, 17, 0.3);
+        }
+
+        .skill-tag:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
         }
 
         [data-theme="dark"] .skill-tag:hover {
@@ -586,6 +670,11 @@
             border-color: var(--orange);
         }
 
+        .footer-links a:focus {
+            outline: 3px solid var(--orange);
+            outline-offset: 3px;
+        }
+
         [data-theme="dark"] .footer-links a:hover {
             color: var(--amber-flame);
             border-color: var(--amber-flame);
@@ -637,6 +726,11 @@
             box-shadow: 0 8px 20px rgba(252, 163, 17, 0.6);
         }
 
+        .scroll-top:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 3px;
+        }
+
         [data-theme="dark"] .scroll-top:hover {
             box-shadow: 0 8px 20px rgba(255, 183, 3, 0.6);
         }
@@ -676,22 +770,147 @@
             }
         }
 
-        /* Color Palette Display (opcional) */
-        .palette-display {
-            display: none;
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 100;
+        /* Expertise Tags */
+        .expertise-tag {
+            display: inline-block;
+            background: var(--body-bg);
+            color: var(--text);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 2px solid var(--border);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
-        .palette-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin: 5px;
+        .expertise-tag::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(252, 163, 17, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        [data-theme="dark"] .expertise-tag::after {
+            background: rgba(255, 183, 3, 0.5);
+        }
+
+        .expertise-tag:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(252, 163, 17, 0.3);
+        }
+
+        .expertise-tag:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        [data-theme="dark"] .expertise-tag:hover {
+            box-shadow: 0 4px 12px rgba(255, 183, 3, 0.4);
+        }
+
+        .expertise-tag:hover::after {
+            animation: ripple 1s ease-out;
+        }
+
+        /* Section for V8/Browser Engine Expertise */
+        .engine-expertise {
+            background: rgba(252, 163, 17, 0.1);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .engine-expertise::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 30%, rgba(252, 163, 17, 0.05) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .engine-expertise:hover {
+            background: rgba(252, 163, 17, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(252, 163, 17, 0.2);
+        }
+
+        .engine-expertise:hover::before {
+            transform: translateX(100%);
+        }
+
+        .engine-expertise:hover h3 {
+            color: var(--text);
+        }
+
+        .engine-expertise:hover .expertise-tag {
+            background: rgba(252, 163, 17, 0.2);
+            border-color: var(--primary);
+        }
+
+        [data-theme="dark"] .engine-expertise {
+            background: rgba(255, 183, 3, 0.1);
+        }
+
+        [data-theme="dark"] .engine-expertise::before {
+            background: linear-gradient(135deg, transparent 30%, rgba(255, 183, 3, 0.05) 50%, transparent 70%);
+        }
+
+        [data-theme="dark"] .engine-expertise:hover {
+            background: rgba(255, 183, 3, 0.15);
+            box-shadow: 0 8px 25px rgba(255, 183, 3, 0.2);
+        }
+
+        [data-theme="dark"] .engine-expertise:hover .expertise-tag {
+            background: rgba(255, 183, 3, 0.2);
+        }
+
+        .engine-expertise h3 {
+            color: var(--text);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        /* Typing Cursor */
+        .typing-cursor {
             display: inline-block;
-            border: 1px solid var(--border);
+            color: var(--orange);
+            font-weight: bold;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+
+        [data-theme="dark"] .typing-cursor {
+            color: var(--amber-flame);
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
     </style>
 </head>
@@ -714,7 +933,7 @@
 
     <!-- Theme Toggle -->
     <div class="theme-toggle">
-        <button class="theme-btn" id="themeToggle">
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
             <i class="fas fa-moon"></i>
             <i class="fas fa-sun"></i>
         </button>
@@ -729,7 +948,10 @@
         <div class="container">
             <h1 class="name">ANTONIO KIBSAIM MEJIA ZEPEDA</h1>
             <p class="title">Curriculum Vitae 2025/2026</p>
-            <p class="header-subtitle">Fullstack Developer | DevOps | Project Management</p>
+            <p class="header-subtitle" id="typingText">Senior Fullstack Developer | DevOps Specialist | Web Performance Expert</p>
+            <div class="experience-badge" tabindex="0">
+                <i class="fas fa-code"></i> 20+ Years of Programming Experience
+            </div>
         </div>
     </header>
 
@@ -737,49 +959,68 @@
         <div class="main-content">
             <!-- Left column -->
             <div>
-                <!-- Skills Card -->
+                <!-- Core Technologies Card -->
                 <div class="card">
-                    <h2><i class="fas fa-code"></i> Programming Languages</h2>
+                    <h2><i class="fas fa-layer-group"></i> Core Technologies</h2>
                     <div class="skills-list">
-                        <span class="skill-tag">Javascript</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Deno</span>
-                        <span class="skill-tag">Rust</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">C</span>
-                    </div>
-                </div>
-                <!-- Technologies Card -->
-                <div class="card">
-                    <h2><i class="fas fa-tools"></i> Technologies</h2>
-                    <div class="skills-list">
-                        <span class="skill-tag">Bash/Linux</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker/K8s</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">React/Vue/Angular</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">MongoDB/MySQL</span>
-                        <span class="skill-tag">Figma/Adobe</span>
-                        <span class="skill-tag">Unity/Unreal</span>
-                    </div>
-                </div>
-                <!-- Specializations Card -->
-                <div class="card">
-                    <h2><i class="fas fa-brain"></i> Specializations</h2>
-                    <div class="skills-list">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Image Classification</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Time-Series</span>
-                        <span class="skill-tag">Anomaly Detection</span>
-                        <span class="skill-tag">Reinforcement Learning</span>
-                        <span class="skill-tag">Generative Models</span>
-                        <span class="skill-tag">Transfer Learning</span>
+                        <span class="skill-tag" tabindex="0">JavaScript/TypeScript</span>
+                        <span class="skill-tag" tabindex="0">Node.js</span>
+                        <span class="skill-tag" tabindex="0">React/Vue/Angular</span>
+                        <span class="skill-tag" tabindex="0">Python</span>
+                        <span class="skill-tag" tabindex="0">Java</span>
+                        <span class="skill-tag" tabindex="0">C++</span>
+                        <span class="skill-tag" tabindex="0">Rust</span>
+                        <span class="skill-tag" tabindex="0">PHP</span>
                     </div>
                 </div>
 
+                <!-- DevOps & Infrastructure Card -->
+                <div class="card">
+                    <h2><i class="fas fa-server"></i> DevOps & Infrastructure</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag" tabindex="0">Docker</span>
+                        <span class="skill-tag" tabindex="0">Kubernetes</span>
+                        <span class="skill-tag" tabindex="0">AWS/Azure/GCP</span>
+                        <span class="skill-tag" tabindex="0">CI/CD Pipelines</span>
+                        <span class="skill-tag" tabindex="0">Jenkins/GitLab CI</span>
+                        <span class="skill-tag" tabindex="0">Terraform</span>
+                        <span class="skill-tag" tabindex="0">Ansible</span>
+                        <span class="skill-tag" tabindex="0">Linux/Bash</span>
+                        <span class="skill-tag" tabindex="0">Nginx/Apache</span>
+                    </div>
+                </div>
+
+                <!-- Frontend Specializations Card -->
+                <div class="card">
+                    <h2><i class="fas fa-desktop"></i> Frontend Expertise</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag" tabindex="0">Performance Optimization</span>
+                        <span class="skill-tag" tabindex="0">V8 Engine Internals</span>
+                        <span class="skill-tag" tabindex="0">Browser Rendering</span>
+                        <span class="skill-tag" tabindex="0">Web Components</span>
+                        <span class="skill-tag" tabindex="0">PWA/SPA</span>
+                        <span class="skill-tag" tabindex="0">WebAssembly</span>
+                        <span class="skill-tag" tabindex="0">Accessibility</span>
+                        <span class="skill-tag" tabindex="0">Cross-browser</span>
+                    </div>
+                </div>
+
+                <!-- Backend & Databases Card -->
+                <div class="card">
+                    <h2><i class="fas fa-database"></i> Backend & Databases</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag" tabindex="0">MongoDB</span>
+                        <span class="skill-tag" tabindex="0">PostgreSQL/MySQL</span>
+                        <span class="skill-tag" tabindex="0">Springboot</span>
+                        <span class="skill-tag" tabindex="0">Redis</span>
+                        <span class="skill-tag" tabindex="0">Elasticsearch</span>
+                        <span class="skill-tag" tabindex="0">GraphQL</span>
+                        <span class="skill-tag" tabindex="0">REST APIs</span>
+                        <span class="skill-tag" tabindex="0">Microservices</span>
+                        <span class="skill-tag" tabindex="0">Message Queues</span>
+                        <span class="skill-tag" tabindex="0">Live Update Services</span>
+                    </div>
+                </div>
 
                 <!-- Languages Card -->
                 <div class="card">
@@ -787,13 +1028,13 @@
                     <div class="language">
                         <i class="fas fa-comment"></i>
                         <div>
-                            <strong>English</strong> - Fluent
+                            <strong>English</strong> - Professional Fluency
                         </div>
                     </div>
                     <div class="language">
                         <i class="fas fa-comment"></i>
                         <div>
-                            <strong>Spanish</strong> - Native
+                            <strong>Spanish</strong> - Native Speaker
                         </div>
                     </div>
                 </div>
@@ -801,68 +1042,107 @@
 
             <!-- Right column -->
             <div>
-                <!-- About Card -->
+                <!-- Professional Profile Card -->
                 <div class="card">
-                    <h2><i class="fas fa-user"></i> Professional Profile</h2>
+                    <h2><i class="fas fa-user-tie"></i> Professional Profile</h2>
                     <p class="about-text">
-                        Passionate and versatile developer with extensive experience in DevOps, design, development, and
-                        implementation of web applications and innovative technological solutions.
+                        Seasoned software engineer with over <strong>20 years of comprehensive experience</strong> in full-stack web development, specializing in high-performance applications, DevOps practices, and browser engine optimization. Expert in documenting and explaining complex technical concepts including Chrome V8 engine internals.
                     </p>
                     <p class="about-text">
-                        Skilled in rapidly adapting to new programming languages and frameworks, as well as effectively
-                        collaborating with multidisciplinary teams in multicultural environments.
+                        <strong>Frontend Specialist</strong> with deep understanding of browser rendering pipelines, JavaScript optimization, and modern web standards. Proven ability to diagnose and solve performance bottlenecks at the engine level.
                     </p>
                     <p class="about-text">
-                        Expert in optimizing and automating software development processes, using best practices and
-                        agile methodologies to deliver high-quality projects on time.
+                        <strong>DevOps Enthusiast</strong> with extensive experience in containerization, orchestration, CI/CD pipelines, and cloud infrastructure. Passionate about automating development workflows and ensuring scalable, reliable deployments.
                     </p>
+                    
+                    <div class="engine-expertise">
+                        <h3><i class="fas fa-cogs"></i> Engine & Performance Expertise</h3>
+                        <div class="expertise-tag" tabindex="0">V8 Engine Optimization</div>
+                        <div class="expertise-tag" tabindex="0">Memory Management</div>
+                        <div class="expertise-tag" tabindex="0">JIT Compilation</div>
+                        <div class="expertise-tag" tabindex="0">Garbage Collection</div>
+                        <div class="expertise-tag" tabindex="0">Browser DevTools</div>
+                        <div class="expertise-tag" tabindex="0">Performance Profiling</div>
+                        <div class="expertise-tag" tabindex="0">Critical Rendering Path</div>
+                    </div>
                 </div>
 
-                <!-- Experience Card -->
+                <!-- Professional Experience Card -->
                 <div class="card">
                     <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
 
                     <div class="experience-item">
-                        <div class="company">HSBC (GSC)</div>
-                        <div class="role">Fullstack Developer</div>
-                        <div class="duration"><i class="far fa-clock"></i> Global Service Center</div>
-                        <p class="description">Architecture, Docker, Internal Banking Services. Pipelines, Kubernetes,
-                            Java.</p>
+                        <div class="company">HSBC Global Service Center</div>
+                        <div class="role">Senior Fullstack Developer & DevOps Lead</div>
+                        <div class="duration"><i class="far fa-clock"></i> 2024 - 2025</div>
+                        <p class="description">
+                            Architected and deployed containerized banking applications using Docker and Kubernetes. 
+                            Implemented CI/CD pipelines for microservices architecture. Led performance optimization 
+                            initiatives reducing page load times. Test Driven Developement for best practices and automated testing
+                            for web performance and security.
+                        </p>
                     </div>
 
                     <div class="experience-item">
-                        <div class="company">NOVA SOLUTION SYSTEMS</div>
-                        <div class="role">Fullstack Angular Developer</div>
-                        <div class="duration"><i class="far fa-clock"></i> Citi Banamex - RAO Project</div>
-                        <p class="description">Web Remote Account Opening. Facial Recognition & Automated Testing.</p>
+                        <div class="company">IBM (BBVA: Continuum Project)</div>
+                        <div class="role">Web Applications Developer & Performance Specialist</div>
+                        <div class="duration"><i class="far fa-clock"></i> 2020 - 2022</div>
+                        <p class="description">
+                            Developed fullstack banking applications with Vue.js and Node.js. Specialized in 
+                            performance optimization, reducing initial load time  and network resource management . Implemented Puppeteer 
+                            for automated testing and monitoring. Contributed to browser performance documentation 
+                            and optimization guides used by development teams.
+                        </p>
                     </div>
 
                     <div class="experience-item">
-                        <div class="company">IBM</div>
-                        <div class="role">Web Applications Developer</div>
-                        <div class="duration"><i class="far fa-clock"></i> BBVA - Continuum Project</div>
-                        <p class="description">Fullstack Developer. Docker, Kubernetes, Bash, Vue, Puppeteer. Banking
-                            Services.</p>
+                        <div class="company">NOVA SOLUTION SYSTEMS (Citi Banamex Project)</div>
+                        <div class="role">Fullstack Angular Developer & Technical Lead</div>
+                        <div class="duration"><i class="far fa-clock"></i> 2019 - 2020 </div>
+                        <p class="description">
+                            Led development of Web Remote Account Opening system serving 2M+ users. Implemented 
+                            facial recognition integration and automated testing suites. Optimized Angular 
+                            application performance through advanced change detection strategies and lazy loading.
+                            Created comprehensive technical documentation for complex frontend architectures.
+                        </p>
                     </div>
-
                     <div class="experience-item">
                         <div class="company">GRUPO TVPROMO</div>
-                        <div class="role">Frontend Developer & Project Manager</div>
-                        <p class="description">Digital Projects Developer. Timetables, Wireframes, Architecture, Web,
-                            FrontEnd Developer, Deploy, Analytics, Apps and Games.</p>
+                        <div class="role">Frontend Architect & Project Manager</div>
+                        <div class="duration"><i class="far fa-clock"></i> 2016 - 2019</div>
+                        <p class="description">
+                            Managed digital projects from conception to deployment. Designed system architectures, 
+                            created wireframes, and led frontend development teams. Developed analytics dashboards 
+                            and interactive applications. Established development workflows and deployment processes 
+                            that increased team productivity.
+                        </p>
                     </div>
+					
+					
+					<!-- 
+                    <div class="experience-item">
+                        <div class="company">Mind Producciones</div>
+                        <div class="role">Art Director</div>
+                        <div class="duration"><i class="far fa-clock"></i> 2011 - 2016</div>
+                        <p class="description">
+                            Design & Production: Lead team producing festivals.
+                        </p>
+                    </div>
+					 -->
                 </div>
 
-                <!-- Roles Card -->
+                <!-- Key Technical Roles Card -->
                 <div class="card">
-                    <h2><i class="fas fa-star"></i> Key Roles</h2>
+                    <h2><i class="fas fa-star"></i> Key Technical Roles</h2>
                     <div class="skills-list">
-                        <span class="skill-tag">Programmer</span>
-                        <span class="skill-tag">Inventor</span>
-                        <span class="skill-tag">Reformer</span>
-                        <span class="skill-tag">Illustrator</span>
-                        <span class="skill-tag">Server</span>
-                        <span class="skill-tag">Creator</span>
+                        <span class="skill-tag" tabindex="0">Performance Architect</span>
+                        <span class="skill-tag" tabindex="0">DevOps Engineer</span>
+                        <span class="skill-tag" tabindex="0">Frontend Specialist</span>
+                        <span class="skill-tag" tabindex="0">Technical Documenter</span>
+                        <span class="skill-tag" tabindex="0">System Designer</span>
+                        <span class="skill-tag" tabindex="0">Team Mentor</span>
+                        <span class="skill-tag" tabindex="0">Code Optimizer</span>
+                        <span class="skill-tag" tabindex="0">Infrastructure Planner</span>
                     </div>
                 </div>
             </div>
@@ -870,19 +1150,23 @@
     </div>
 
     <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">
+    <div class="scroll-top" id="scrollTop" tabindex="0" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </div>
 
     <footer>
         <div class="container">
-            <p>Antonio Kibsa - Developer Portfolio</p>
+            <p>Antonio Kibsaim - Senior Fullstack & DevOps Developer</p>
             <div class="footer-links">
-                <a href="#" id="githubLink"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" id="linkedinLink"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="#" id="contactLink"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#" id="githubLink" tabindex="0"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" id="linkedinLink" tabindex="0"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" id="contactLink" tabindex="0"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#" id="resumeLink" tabindex="0"><i class="fas fa-file-pdf"></i> Resume</a>
             </div>
             <p class="copyright" id="copyrightText"></p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: rgba(255,255,255,0.5);">
+                Specializing in Web Performance, V8 Engine Optimization, and DevOps Automation
+            </p>
         </div>
     </footer>
 
@@ -927,7 +1211,7 @@
             }, 300);
         });
 
-        // ========== SCROLL TO TOP ==========
+        // ========== SCROLL TO TOP (Fixed) ==========
         const scrollTop = document.getElementById('scrollTop');
 
         window.addEventListener('scroll', function () {
@@ -939,10 +1223,17 @@
         });
 
         scrollTop.addEventListener('click', function () {
+            this.style.transform = 'scale(0.9)';
+            
+            // Smooth scroll usando window.scrollTo con behavior: 'smooth'
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+            
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 300);
         });
 
         // ========== SKILL TAGS ANIMATION ==========
@@ -1008,7 +1299,7 @@
 
         // ========== UPDATE COPYRIGHT YEAR ==========
         document.getElementById('copyrightText').textContent =
-            `© ${new Date().getFullYear()} Curriculum Vitae. All information based on KibzaCV2025eng.pdf`;
+            `© ${new Date().getFullYear()} Antonio Kibsaim - 20+ Years of Development Excellence`;
 
         // ========== SOCIAL LINKS SIMULATION ==========
         document.getElementById('githubLink').addEventListener('click', function (e) {
@@ -1024,6 +1315,11 @@
         document.getElementById('contactLink').addEventListener('click', function (e) {
             e.preventDefault();
             showNotification('Contact form would open in a real implementation!');
+        });
+
+        document.getElementById('resumeLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            showNotification('PDF resume would download in a real implementation!');
         });
 
         // ========== NOTIFICATION FUNCTION ==========
@@ -1091,50 +1387,68 @@
         `;
         document.head.appendChild(style);
 
-        // ========== TYPING ANIMATION FOR HEADER ==========
+        // ========== IMPROVED TYPING ANIMATION FOR HEADER ==========
         const titleElement = document.querySelector('.header-subtitle');
         if (titleElement) {
             const originalText = titleElement.textContent;
             titleElement.textContent = '';
-
+            
+            // Añadir cursor parpadeante
+            const cursor = document.createElement('span');
+            cursor.className = 'typing-cursor';
+            cursor.textContent = '|';
+            titleElement.parentNode.appendChild(cursor);
+            
             let i = 0;
             function typeWriter() {
                 if (i < originalText.length) {
                     titleElement.textContent += originalText.charAt(i);
                     i++;
-                    setTimeout(typeWriter, 50);
+                    // Velocidad variable para más naturalidad
+                    const speed = Math.random() * 30 + 40;
+                    setTimeout(typeWriter, speed);
+                } else {
+                    // Remover cursor cuando termine
+                    cursor.style.opacity = '0';
+                    setTimeout(() => cursor.remove(), 500);
                 }
             }
-
+            
             // Start typing after loader
             setTimeout(typeWriter, 1800);
         }
 
-        // ========== SHOW CURRENT COLOR PALETTE (para desarrollo) ==========
-        // Descomenta si quieres ver las paletas de colores en la esquina
-        /*
-        function showColorPalette() {
-            const palette = document.createElement('div');
-            palette.className = 'palette-display';
-            palette.id = 'colorPalette';
-            
-            const lightColors = ['#000000', '#14213d', '#fca311', '#e5e5e5', '#ffffff'];
-            const darkColors = ['#8ecae6', '#219ebc', '#023047', '#ffb703', '#fb8500'];
-            
-            const currentColors = document.documentElement.getAttribute('data-theme') === 'dark' ? darkColors : lightColors;
-            
-            currentColors.forEach(color => {
-                const colorDiv = document.createElement('div');
-                colorDiv.className = 'palette-color';
-                colorDiv.style.backgroundColor = color;
-                palette.appendChild(colorDiv);
+        // ========== EXPERTISE TAG HOVER EFFECT ==========
+        const expertiseTags = document.querySelectorAll('.expertise-tag');
+        
+        expertiseTags.forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
             });
             
-            document.body.appendChild(palette);
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // ========== EXPERIENCE BADGE CLICK EFFECT ==========
+        const experienceBadge = document.querySelector('.experience-badge');
+        if (experienceBadge) {
+            experienceBadge.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+                
+                // Scroll to experience section
+                document.querySelector('.experience-item').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
         }
-        
-        showColorPalette();
-        */
     </script>
 </body>
 
