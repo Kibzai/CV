@@ -450,7 +450,7 @@
       }
 
       // Modo color - paleta completa
-      const hue = (theta * 180 / Math.PI * 2 + i * 0.5) % 360;
+      const hue = (theta * 180 / Math.PI * 2 + i * 0.01682) % 360;
       const saturation = 75 + Math.sin(i * 0.02) * 15;
       const maxRadius = Math.sqrt(state.seedCount) * 2;
       const lightness = 40 + (1 - radius / maxRadius) * 35;
