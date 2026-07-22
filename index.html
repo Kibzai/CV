@@ -18,64 +18,55 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
+        </script>
 
         <style>
             :root {
-                --neon-pink: #f72585;
-                --raspberry-plum: #b5179e;
-                --indigo-bloom: #7209b7;
-                --ultrasonic-blue: #560bad;
-                --true-azure: #480ca8;
-                --vivid-royal: #3a0ca3;
-                --bright-indigo: #3f37c9;
-                --electric-sapphire: #4361ee;
-                --blue-energy: #4895ef;
-                --sky-aqua: #4cc9f0;
-                --burnt-caramel: #ca6702;
-                --rusty-spice: #bb3e03;
-                --oxidized-iron: #ae2012;
-                --brown-red: #9b2226;
-                --emerald-glow: #06d6a0;
-                --amber-spark: #ffd166;
+                --amber-gold: #ffbe0b;
+                --blaze-orange: #fb5607;
+                --neon-pink: #ff006e;
+                --blue-violet: #8338ec;
+                --azure-blue: #3a86ff;
+                --tropical-mint: #10f9bb;
 
-                --primary: var(--electric-sapphire);
+                --primary: var(--azure-blue);
                 --secondary: var(--neon-pink);
-                --accent-1: var(--bright-indigo);
-                --accent-2: var(--blue-energy);
-                --accent-3: var(--burnt-caramel);
-                --accent-4: var(--oxidized-iron);
-                --success: var(--emerald-glow);
-                --highlight: var(--amber-spark);
+                --accent-1: var(--blue-violet);
+                --accent-2: var(--azure-blue);
+                --accent-3: var(--blaze-orange);
+                --accent-4: var(--neon-pink);
+                --success: var(--tropical-mint);
+                --highlight: var(--amber-gold);
                 --card-bg: #ffffff;
                 --body-bg: #f5f7ff;
-                --text: var(--vivid-royal);
-                --text-secondary: var(--vivid-royal);
+                --text: #1a1a2e;
+                --text-secondary: #1a1a2e;
                 --border: #e1e4ff;
-                --shadow: 0 4px 6px -1px rgba(67, 97, 238, 0.1);
-                --shadow-hover: 0 10px 15px -3px rgba(67, 97, 238, 0.15);
-                --shadow-lg: 0 20px 40px -8px rgba(67, 97, 238, 0.18);
-                --border-radius: 12px;
+                --shadow: 0 4px 6px -1px rgba(58, 134, 255, 0.1);
+                --shadow-hover: 0 10px 15px -3px rgba(58, 134, 255, 0.15);
+                --shadow-lg: 0 20px 40px -8px rgba(58, 134, 255, 0.18);
+                --border-radius: 0;
                 --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
             [data-theme="dark"] {
-                --primary: var(--blue-energy);
+                --primary: var(--azure-blue);
                 --secondary: var(--neon-pink);
-                --accent-1: var(--electric-sapphire);
-                --accent-2: var(--sky-aqua);
-                --accent-3: var(--burnt-caramel);
-                --accent-4: var(--rusty-spice);
-                --success: var(--emerald-glow);
-                --highlight: var(--amber-spark);
+                --accent-1: var(--blue-violet);
+                --accent-2: var(--tropical-mint);
+                --accent-3: var(--blaze-orange);
+                --accent-4: var(--amber-gold);
+                --success: var(--tropical-mint);
+                --highlight: var(--amber-gold);
                 --card-bg: #0a0a1a;
                 --body-bg: #050510;
                 --text: #e0e0ff;
-                --text-secondary: var(--text);
+                --text-secondary: #e0e0ff;
                 --border: #1a1a3a;
                 --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
-                --shadow-hover: 0 10px 15px -3px rgba(72, 149, 239, 0.3);
-                --shadow-lg: 0 20px 40px -8px rgba(72, 149, 239, 0.25);
+                --shadow-hover: 0 10px 15px -3px rgba(58, 134, 255, 0.3);
+                --shadow-lg: 0 20px 40px -8px rgba(58, 134, 255, 0.25);
             }
 
             * {
@@ -185,25 +176,17 @@
             header {
                 background: linear-gradient(
                     135deg,
-                    var(--vivid-royal),
-                    var(--indigo-bloom)
+                    var(--blue-violet),
+                    var(--neon-pink)
                 );
                 color: white;
                 padding: 2.5rem 0;
                 text-align: center;
-                border-bottom-left-radius: 30px;
-                border-bottom-right-radius: 30px;
+                border-radius: 0;
                 margin-bottom: 2rem;
                 box-shadow: var(--shadow-lg);
                 position: relative;
                 overflow: hidden;
-            }
-            [data-theme="dark"] header {
-                background: linear-gradient(
-                    135deg,
-                    var(--true-azure),
-                    var(--raspberry-plum)
-                );
             }
             header::before {
                 content: "";
@@ -245,7 +228,7 @@
             }
             .header-subtitle {
                 font-size: 1.1rem;
-                color: var(--sky-aqua);
+                color: var(--tropical-mint);
                 font-weight: 500;
                 margin-top: 0.5rem;
                 position: relative;
@@ -265,22 +248,22 @@
             }
             .header-location i {
                 margin-right: 6px;
-                color: var(--emerald-glow);
+                color: var(--tropical-mint);
             }
             .experience-badge {
                 display: inline-block;
                 background: linear-gradient(
                     135deg,
                     var(--neon-pink),
-                    var(--electric-sapphire)
+                    var(--azure-blue)
                 );
                 color: white;
                 padding: 0.6rem 1.5rem;
-                border-radius: 30px;
+                border-radius: 0;
                 font-weight: 700;
                 margin-top: 1.2rem;
                 font-size: 1.1rem;
-                box-shadow: 0 6px 15px rgba(247, 37, 133, 0.4);
+                box-shadow: 0 6px 15px rgba(255, 0, 110, 0.4);
                 cursor: pointer;
                 transition: all 0.3s ease;
                 animation: fadeInUp 1s ease 0.6s both;
@@ -290,7 +273,7 @@
             }
             .experience-badge:hover {
                 transform: translateY(-3px) scale(1.05);
-                box-shadow: 0 10px 25px rgba(247, 37, 133, 0.6);
+                box-shadow: 0 10px 25px rgba(255, 0, 110, 0.6);
             }
             .experience-badge:focus-visible {
                 outline: 3px solid white;
@@ -394,7 +377,7 @@
                 background: linear-gradient(
                     to bottom,
                     var(--neon-pink),
-                    var(--electric-sapphire)
+                    var(--azure-blue)
                 );
                 transform: scaleY(0);
                 transition: transform 0.3s ease;
@@ -444,7 +427,7 @@
                 background: var(--primary);
                 color: white;
                 transform: translateY(-3px);
-                box-shadow: 0 5px 15px rgba(72, 149, 239, 0.3);
+                box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
                 border-color: var(--primary);
             }
             .skill-tag:focus-visible {
@@ -452,14 +435,14 @@
                 outline-offset: 2px;
             }
             .skill-tag.highlight-tag {
-                border-color: var(--emerald-glow);
-                background: rgba(6, 214, 160, 0.08);
+                border-color: var(--tropical-mint);
+                background: rgba(16, 249, 187, 0.08);
             }
             .skill-tag.highlight-tag:hover {
-                background: var(--emerald-glow);
-                border-color: var(--emerald-glow);
+                background: var(--tropical-mint);
+                border-color: var(--tropical-mint);
                 color: #000;
-                box-shadow: 0 5px 15px rgba(6, 214, 160, 0.35);
+                box-shadow: 0 5px 15px rgba(16, 249, 187, 0.35);
             }
 
             .experience-item {
@@ -537,18 +520,18 @@
             }
             .metric-highlight {
                 display: inline-block;
-                background: rgba(6, 214, 160, 0.12);
+                background: rgba(16, 249, 187, 0.12);
                 color: #059669;
                 font-weight: 700;
                 padding: 0.15rem 0.6rem;
                 border-radius: 4px;
                 font-size: 0.9rem;
-                border: 1px solid rgba(6, 214, 160, 0.3);
+                border: 1px solid rgba(16, 249, 187, 0.3);
             }
             [data-theme="dark"] .metric-highlight {
-                background: rgba(6, 214, 160, 0.18);
-                color: var(--emerald-glow);
-                border-color: rgba(6, 214, 160, 0.4);
+                background: rgba(16, 249, 187, 0.18);
+                color: var(--tropical-mint);
+                border-color: rgba(16, 249, 187, 0.4);
             }
 
             .about-text {
@@ -569,8 +552,8 @@
             .engine-expertise {
                 background: linear-gradient(
                     135deg,
-                    rgba(72, 149, 239, 0.1),
-                    rgba(247, 37, 133, 0.05)
+                    rgba(58, 134, 255, 0.1),
+                    rgba(255, 0, 110, 0.05)
                 );
                 border-radius: var(--border-radius);
                 padding: 1.5rem;
@@ -581,11 +564,11 @@
             .engine-expertise:hover {
                 background: linear-gradient(
                     135deg,
-                    rgba(72, 149, 239, 0.15),
-                    rgba(247, 37, 133, 0.1)
+                    rgba(58, 134, 255, 0.15),
+                    rgba(255, 0, 110, 0.1)
                 );
                 transform: translateY(-3px);
-                box-shadow: 0 8px 25px rgba(72, 149, 239, 0.2);
+                box-shadow: 0 8px 25px rgba(58, 134, 255, 0.2);
             }
             .engine-expertise h3 {
                 color: var(--text);
@@ -610,12 +593,14 @@
                 border: 2px solid var(--border);
                 transition: var(--transition);
                 cursor: pointer;
+                position: relative;
+                overflow: hidden;
             }
             .expertise-tag:hover {
                 background: var(--primary);
                 color: white;
                 transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(72, 149, 239, 0.3);
+                box-shadow: 0 4px 12px rgba(58, 134, 255, 0.3);
                 border-color: var(--primary);
             }
             .expertise-tag:focus-visible {
@@ -626,10 +611,10 @@
             .achievement-card {
                 background: linear-gradient(
                     135deg,
-                    rgba(255, 209, 102, 0.08),
-                    rgba(6, 214, 160, 0.06)
+                    rgba(255, 190, 11, 0.08),
+                    rgba(16, 249, 187, 0.06)
                 );
-                border: 1px solid rgba(255, 209, 102, 0.25);
+                border: 1px solid rgba(255, 190, 11, 0.25);
                 border-radius: var(--border-radius);
                 padding: 1.2rem;
                 margin-bottom: 1rem;
@@ -638,7 +623,7 @@
             }
             .achievement-card:hover {
                 transform: translateY(-3px);
-                box-shadow: 0 8px 25px rgba(255, 209, 102, 0.2);
+                box-shadow: 0 8px 25px rgba(255, 190, 11, 0.2);
                 border-color: var(--highlight);
             }
             .achievement-card h4 {
@@ -672,12 +657,12 @@
             }
             .quote-block:hover {
                 border-left-color: var(--primary);
-                background: rgba(67, 97, 238, 0.03);
+                background: rgba(58, 134, 255, 0.03);
             }
 
             .typing-cursor {
                 display: inline-block;
-                color: var(--sky-aqua);
+                color: var(--tropical-mint);
                 font-weight: bold;
                 animation: blink 1s infinite;
                 margin-left: 2px;
@@ -697,7 +682,7 @@
             }
 
             footer {
-                background-color: var(--vivid-royal);
+                background: var(--blue-violet);
                 color: white;
                 text-align: center;
                 padding: 2rem;
@@ -708,8 +693,8 @@
                 box-shadow: var(--shadow);
             }
             [data-theme="dark"] footer {
-                background-color: var(--true-azure);
-                color: var(--sky-aqua);
+                background: #3d1a8e;
+                color: var(--tropical-mint);
             }
             .footer-links {
                 display: flex;
@@ -739,18 +724,18 @@
             }
             [data-theme="dark"] .footer-links a,
             [data-theme="dark"] .footer-links button {
-                color: var(--sky-aqua);
+                color: var(--tropical-mint);
             }
             .footer-links a:hover,
             .footer-links button:hover {
-                color: var(--sky-aqua);
+                color: var(--tropical-mint);
                 background: rgba(255, 255, 255, 0.1);
                 transform: translateY(-3px);
-                border-color: var(--sky-aqua);
+                border-color: var(--tropical-mint);
             }
             .footer-links a:focus-visible,
             .footer-links button:focus-visible {
-                outline: 3px solid var(--sky-aqua);
+                outline: 3px solid var(--tropical-mint);
                 outline-offset: 3px;
             }
             .footer-pdf-btn {
@@ -767,10 +752,10 @@
             @keyframes pulse-btn {
                 0%,
                 100% {
-                    box-shadow: 0 0 0 0 rgba(174, 32, 18, 0.4);
+                    box-shadow: 0 0 0 0 rgba(251, 86, 7, 0.4);
                 }
                 50% {
-                    box-shadow: 0 0 0 12px rgba(174, 32, 18, 0);
+                    box-shadow: 0 0 0 12px rgba(251, 86, 7, 0);
                 }
             }
             .footer-pdf-btn:hover {
@@ -780,7 +765,7 @@
                     var(--secondary)
                 ) !important;
                 transform: translateY(-3px) scale(1.05) !important;
-                box-shadow: 0 8px 20px rgba(174, 32, 18, 0.5) !important;
+                box-shadow: 0 8px 20px rgba(251, 86, 7, 0.5) !important;
             }
             .copyright {
                 font-size: 0.9rem;
@@ -788,7 +773,7 @@
                 word-wrap: break-word;
             }
             [data-theme="dark"] .copyright {
-                color: rgba(202, 240, 248, 0.7);
+                color: rgba(16, 249, 187, 0.7);
             }
 
             .scroll-top {
@@ -797,7 +782,7 @@
                 right: 30px;
                 width: 50px;
                 height: 50px;
-                background: var(--electric-sapphire);
+                background: var(--azure-blue);
                 color: white;
                 border-radius: 50%;
                 display: flex;
@@ -808,7 +793,7 @@
                 visibility: hidden;
                 transition: var(--transition);
                 z-index: 100;
-                box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+                box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
                 border: none;
             }
             .scroll-top.show {
@@ -817,40 +802,20 @@
             }
             .scroll-top:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 8px 20px rgba(67, 97, 238, 0.6);
+                box-shadow: 0 8px 20px rgba(58, 134, 255, 0.6);
             }
             .scroll-top:focus-visible {
                 outline: 3px solid var(--primary);
                 outline-offset: 3px;
             }
 
-            .floating-element {
-                position: absolute;
+            .floating-circle {
+                position: fixed;
                 border-radius: 50%;
-                animation: float 20s infinite linear;
+                background: rgba(255, 0, 110, 0.05);
                 z-index: -1;
                 pointer-events: none;
-            }
-            .floating-element:nth-child(1) {
-                top: 10%;
-                left: 5%;
-                width: 50px;
-                height: 50px;
-                background: rgba(72, 149, 239, 0.1);
-            }
-            .floating-element:nth-child(2) {
-                top: 20%;
-                right: 10%;
-                width: 30px;
-                height: 30px;
-                background: rgba(247, 37, 133, 0.08);
-            }
-            .floating-element:nth-child(3) {
-                bottom: 30%;
-                left: 15%;
-                width: 70px;
-                height: 70px;
-                background: rgba(72, 149, 239, 0.06);
+                animation: float 20s infinite linear;
             }
             @keyframes float {
                 0%,
@@ -977,9 +942,6 @@
                     height: 45px;
                     font-size: 1rem;
                 }
-                .floating-element {
-                    display: none;
-                }
                 .metric-highlight {
                     font-size: 0.8rem;
                     padding: 0.1rem 0.4rem;
@@ -1027,7 +989,6 @@
                 }
             }
 
-            /* ========== PRINT STYLES ========== */
             @media print {
                 @page {
                     size: Letter;
@@ -1056,7 +1017,7 @@
                 #loader,
                 .theme-toggle,
                 .scroll-top,
-                .floating-element,
+                .floating-circle,
                 .notification,
                 .typing-cursor,
                 header::before,
@@ -1069,7 +1030,7 @@
                 header {
                     display: block !important;
                     width: 100% !important;
-                    background: #3a0ca3 !important;
+                    background: #8338ec !important;
                     color: #ffffff !important;
                     padding: 0.14in 0.16in !important;
                     margin: 0 0 0.1in 0 !important;
@@ -1099,7 +1060,7 @@
                     line-height: 1 !important;
                     margin: 0 !important;
                     min-height: 0 !important;
-                    color: #4cc9f0 !important;
+                    color: #10f9bb !important;
                 }
                 .container {
                     width: 100% !important;
@@ -1132,8 +1093,8 @@
                     break-inside: auto !important;
                 }
                 .card h2 {
-                    color: #3a0ca3 !important;
-                    border-bottom: 1px solid #4361ee !important;
+                    color: #8338ec !important;
+                    border-bottom: 1px solid #3a86ff !important;
                     font-size: 8pt !important;
                     line-height: 1 !important;
                     margin: 0 0 0.04in 0 !important;
@@ -1143,7 +1104,7 @@
                     gap: 4px !important;
                 }
                 .card h2 i {
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                     font-size: 7pt !important;
                 }
                 .skills-list {
@@ -1166,7 +1127,7 @@
                     break-inside: avoid !important;
                 }
                 .skill-tag.highlight-tag {
-                    border-color: #06d6a0 !important;
+                    border-color: #10f9bb !important;
                     background: #e6faf5 !important;
                 }
                 .about-text {
@@ -1176,11 +1137,11 @@
                     margin: 0 0 0.03in 0 !important;
                 }
                 strong {
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                 }
                 .engine-expertise {
                     background: #f8f9ff !important;
-                    border-left: 2px solid #4361ee !important;
+                    border-left: 2px solid #3a86ff !important;
                     border-radius: 3px !important;
                     padding: 0.05in !important;
                     margin: 0.04in 0 0 0 !important;
@@ -1191,10 +1152,10 @@
                     font-size: 7pt !important;
                     line-height: 1 !important;
                     margin: 0 0 2px 0 !important;
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                 }
                 .engine-expertise h3 i {
-                  color: #4361ee !important;
+                    color: #3a86ff !important;
                     font-size: 6.5pt !important;
                 }
                 .expertise-tag {
@@ -1227,7 +1188,7 @@
                     width: 4px !important;
                     height: 4px !important;
                     border-radius: 50% !important;
-                    background: #4361ee !important;
+                    background: #3a86ff !important;
                 }
                 .experience-item:last-child {
                     margin-bottom: 0 !important;
@@ -1244,7 +1205,7 @@
                     font-size: 6.5pt !important;
                     line-height: 1.05 !important;
                     margin: 1px 0 !important;
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                 }
                 .duration {
                     font-size: 6pt !important;
@@ -1253,7 +1214,7 @@
                     color: #666666 !important;
                 }
                 .duration i {
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                 }
                 .description {
                     font-size: 6pt !important;
@@ -1266,7 +1227,7 @@
                     padding-left: 0.08in !important;
                 }
                 .description li::before {
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                 }
                 .metric-highlight {
                     font-size: 5.5pt !important;
@@ -1289,14 +1250,14 @@
                     color: #1a1a2e !important;
                 }
                 .achievement-card h4 i {
-                  color: #ca6702 !important;
+                    color: #fb5607 !important;
                 }
                 .achievement-card p {
                     color: #1a1a2e !important;
                     font-size: 6pt !important;
                 }
                 .quote-block {
-                    border-left: 3px solid #f72585 !important;
+                    border-left: 3px solid #ff006e !important;
                     padding: 0.04in 0.08in !important;
                     margin: 0.04in 0 !important;
                     font-size: 6.5pt !important;
@@ -1309,12 +1270,12 @@
                     margin: 0 0 2px 0 !important;
                 }
                 .language i {
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                     font-size: 6.5pt !important;
                     margin-right: 4px !important;
                 }
                 a {
-                    color: #4361ee !important;
+                    color: #3a86ff !important;
                     text-decoration: none !important;
                 }
                 h1,
@@ -1348,19 +1309,13 @@
             </button>
         </div>
 
-        <div class="floating-element" aria-hidden="true"></div>
-        <div class="floating-element" aria-hidden="true"></div>
-        <div class="floating-element" aria-hidden="true"></div>
-
         <header>
             <div class="container">
                 <h1 class="name">ANTONIO KIBSAIM MEJIA ZEPEDA</h1>
                 <p class="title">
                     Senior Fullstack Architect & DevOps Engineer
                 </p>
-                <p class="header-subtitle" id="typingText">
-                    Engine & Performance Optimization Expert
-                </p>
+                <p class="header-subtitle" id="typingText">Engine & Performance Optimization Expert</p>
                 <span class="header-location">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     CDMX | Mexico
@@ -1379,21 +1334,15 @@
 
         <div class="container">
             <div class="main-content">
-                <!-- ========== LEFT COLUMN ========== -->
                 <div>
-                    <!-- Core Competencies -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-bolt" aria-hidden="true"></i> Core
                             Competencies
                         </h2>
                         <div class="skills-list">
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >JavaScript/TS</span
-                            >
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >Python</span
-                            >
+                            <span class="skill-tag highlight-tag" tabindex="0">JavaScript/TS</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">Python</span>
                             <span class="skill-tag" tabindex="0">PHP</span>
                             <span class="skill-tag" tabindex="0">Java</span>
                             <span class="skill-tag" tabindex="0">Rust</span>
@@ -1401,36 +1350,22 @@
                         </div>
                     </div>
 
-                    <!-- Frontend & Engines -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-microchip" aria-hidden="true"></i>
                             Frontend & Engines
                         </h2>
                         <div class="skills-list">
-                            <span class="skill-tag" tabindex="0"
-                                >React / Vue / Angular</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Web Components</span
-                            >
+                            <span class="skill-tag" tabindex="0">React / Vue / Angular</span>
+                            <span class="skill-tag" tabindex="0">Web Components</span>
                             <span class="skill-tag" tabindex="0">PWA / SPA</span>
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >V8 Internals</span
-                            >
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >JIT Compilation</span
-                            >
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >Garbage Collection</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Browser Rendering Pipeline</span
-                            >
+                            <span class="skill-tag highlight-tag" tabindex="0">V8 Internals</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">JIT Compilation</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">Garbage Collection</span>
+                            <span class="skill-tag" tabindex="0">Browser Rendering Pipeline</span>
                         </div>
                     </div>
 
-                    <!-- Backend & Data -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-database" aria-hidden="true"></i>
@@ -1438,84 +1373,47 @@
                         </h2>
                         <div class="skills-list">
                             <span class="skill-tag" tabindex="0">Node.js</span>
-                            <span class="skill-tag" tabindex="0"
-                                >Spring Boot</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >GraphQL / REST</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Microservices</span
-                            >
+                            <span class="skill-tag" tabindex="0">Spring Boot</span>
+                            <span class="skill-tag" tabindex="0">GraphQL / REST</span>
+                            <span class="skill-tag" tabindex="0">Microservices</span>
                             <span class="skill-tag" tabindex="0">MongoDB</span>
-                            <span class="skill-tag" tabindex="0"
-                                >PostgreSQL</span
-                            >
+                            <span class="skill-tag" tabindex="0">PostgreSQL</span>
                             <span class="skill-tag" tabindex="0">Redis</span>
                         </div>
                     </div>
 
-                    <!-- DevOps & Cloud -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-cloud" aria-hidden="true"></i>
                             DevOps & Cloud
                         </h2>
                         <div class="skills-list">
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >Docker</span
-                            >
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >Kubernetes</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >AWS / Azure / GCP</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Terraform</span
-                            >
+                            <span class="skill-tag highlight-tag" tabindex="0">Docker</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">Kubernetes</span>
+                            <span class="skill-tag" tabindex="0">AWS / Azure / GCP</span>
+                            <span class="skill-tag" tabindex="0">Terraform</span>
                             <span class="skill-tag" tabindex="0">Ansible</span>
-                            <span class="skill-tag" tabindex="0"
-                                >CI/CD Pipelines</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Jenkins / GitLab CI</span
-                            >
+                            <span class="skill-tag" tabindex="0">CI/CD Pipelines</span>
+                            <span class="skill-tag" tabindex="0">Jenkins / GitLab CI</span>
                         </div>
                     </div>
 
-                    <!-- Performance -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
                             Performance Arsenal
                         </h2>
                         <div class="skills-list">
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >Lighthouse Profiling</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Memory Leak Detection</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Critical CSS</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Lazy Loading</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >CDN Strategy</span
-                            >
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >WebAssembly</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >TTI Optimization</span
-                            >
+                            <span class="skill-tag highlight-tag" tabindex="0">Lighthouse Profiling</span>
+                            <span class="skill-tag" tabindex="0">Memory Leak Detection</span>
+                            <span class="skill-tag" tabindex="0">Critical CSS</span>
+                            <span class="skill-tag" tabindex="0">Lazy Loading</span>
+                            <span class="skill-tag" tabindex="0">CDN Strategy</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">WebAssembly</span>
+                            <span class="skill-tag" tabindex="0">TTI Optimization</span>
                         </div>
                     </div>
 
-                    <!-- Languages -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-language" aria-hidden="true"></i>
@@ -1537,9 +1435,7 @@
                     </div>
                 </div>
 
-                <!-- ========== RIGHT COLUMN ========== -->
                 <div>
-                    <!-- Professional Summary -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-user-astronaut" aria-hidden="true"></i>
@@ -1556,13 +1452,9 @@
                         </p>
                         <p class="about-text">
                             Currently focused on leading teams to deliver
-                            <span class="metric-highlight"
-                                >sub-second load times</span
-                            >
+                            <span class="metric-highlight">sub-second load times</span>
                             and
-                            <span class="metric-highlight"
-                                >99.99% uptime</span
-                            >
+                            <span class="metric-highlight">99.99% uptime</span>
                             through advanced DevOps practices and frontend
                             optimization.
                         </p>
@@ -1579,31 +1471,16 @@
                                 <i class="fas fa-cogs" aria-hidden="true"></i>
                                 Engine & Performance Expertise
                             </h3>
-                            <span class="expertise-tag" tabindex="0"
-                                >V8 Engine Optimization</span
-                            >
-                            <span class="expertise-tag" tabindex="0"
-                                >Memory Management</span
-                            >
-                            <span class="expertise-tag" tabindex="0"
-                                >JIT Compilation</span
-                            >
-                            <span class="expertise-tag" tabindex="0"
-                                >Garbage Collection</span
-                            >
-                            <span class="expertise-tag" tabindex="0"
-                                >Browser DevTools</span
-                            >
-                            <span class="expertise-tag" tabindex="0"
-                                >Performance Profiling</span
-                            >
-                            <span class="expertise-tag" tabindex="0"
-                                >Critical Rendering Path</span
-                            >
+                            <span class="expertise-tag" tabindex="0">V8 Engine Optimization</span>
+                            <span class="expertise-tag" tabindex="0">Memory Management</span>
+                            <span class="expertise-tag" tabindex="0">JIT Compilation</span>
+                            <span class="expertise-tag" tabindex="0">Garbage Collection</span>
+                            <span class="expertise-tag" tabindex="0">Browser DevTools</span>
+                            <span class="expertise-tag" tabindex="0">Performance Profiling</span>
+                            <span class="expertise-tag" tabindex="0">Critical Rendering Path</span>
                         </div>
                     </div>
 
-                    <!-- Professional Experience -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-briefcase" aria-hidden="true"></i>
@@ -1635,9 +1512,7 @@
                                 <li>
                                     Optimized frontend delivery, slashing page
                                     load times by
-                                    <span class="metric-highlight"
-                                        >~2 seconds</span
-                                    >
+                                    <span class="metric-highlight">~2 seconds</span>
                                     through aggressive code-splitting and image
                                     optimization.
                                 </li>
@@ -1673,9 +1548,7 @@
                                 <li>
                                     Authored internal documentation on V8 engine
                                     optimization used as a reference by
-                                    <span class="metric-highlight"
-                                        >+50 developers</span
-                                    >.
+                                    <span class="metric-highlight">+50 developers</span>.
                                 </li>
                             </ul>
                         </div>
@@ -1694,9 +1567,7 @@
                                 <li>
                                     Led development of Web Remote Account
                                     Opening system supporting
-                                    <span class="metric-highlight"
-                                        >2M+ active users</span
-                                    >.
+                                    <span class="metric-highlight">2M+ active users</span>.
                                 </li>
                                 <li>
                                     Implemented advanced Change Detection and
@@ -1737,7 +1608,6 @@
                         </div>
                     </div>
 
-                    <!-- Key Achievements -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-trophy" aria-hidden="true"></i> Key
@@ -1793,38 +1663,24 @@
                         </div>
                     </div>
 
-                    <!-- Professional Focus -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-crosshairs" aria-hidden="true"></i>
                             Professional Focus
                         </h2>
                         <div class="skills-list">
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >Performance First</span
-                            >
-                            <span class="skill-tag highlight-tag" tabindex="0"
-                                >Automation Advocate</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Security Mindset</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >Mentor & Leader</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >TTI Obsessed</span
-                            >
-                            <span class="skill-tag" tabindex="0"
-                                >IaC Enthusiast</span
-                            >
+                            <span class="skill-tag highlight-tag" tabindex="0">Performance First</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">Automation Advocate</span>
+                            <span class="skill-tag" tabindex="0">Security Mindset</span>
+                            <span class="skill-tag" tabindex="0">Mentor & Leader</span>
+                            <span class="skill-tag" tabindex="0">TTI Obsessed</span>
+                            <span class="skill-tag" tabindex="0">IaC Enthusiast</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Solo botón flotante: Scroll to Top -->
         <button
             class="scroll-top"
             id="scrollTop"
@@ -1834,7 +1690,6 @@
             <i class="fas fa-chevron-up" aria-hidden="true"></i>
         </button>
 
-        <!-- Footer con botón de exportar PDF integrado -->
         <footer>
             <div class="container">
                 <p>
@@ -1842,18 +1697,28 @@
                     Engineer
                 </p>
                 <div class="footer-links">
-                    <a href="#" id="githubLink" tabindex="0"
-                        ><i class="fab fa-github" aria-hidden="true"></i>
-                        GitHub</a
+                    <a
+                        href="https://github.com/TU_USUARIO"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        tabindex="0"
                     >
-                    <a href="#" id="linkedinLink" tabindex="0"
-                        ><i class="fab fa-linkedin" aria-hidden="true"></i>
-                        LinkedIn</a
+                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/TU_USUARIO"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        tabindex="0"
                     >
-                    <a href="#" id="contactLink" tabindex="0"
-                        ><i class="fas fa-envelope" aria-hidden="true"></i>
-                        Contact</a
+                        <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                    </a>
+                    <a
+                        href="mailto:TU_EMAIL@example.com"
+                        tabindex="0"
                     >
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Contact
+                    </a>
                     <button
                         class="footer-pdf-btn"
                         id="pdfExportBtn"
@@ -1893,6 +1758,31 @@
                 }
                 window.addEventListener("load", hideLoader);
                 setTimeout(hideLoader, 2500);
+
+                function createFloatingCircles() {
+                    const count = 15;
+                    const fragment = document.createDocumentFragment();
+                    for (let i = 0; i < count; i++) {
+                        const circle = document.createElement("div");
+                        circle.className = "floating-circle";
+                        const size = Math.floor(Math.random() * 40) + 20;
+                        const left = Math.random() * 100;
+                        const top = Math.random() * 100;
+                        const delay = Math.random() * 20;
+                        const duration = Math.random() * 20 + 20;
+                        circle.style.cssText = `
+                            width: ${size}px;
+                            height: ${size}px;
+                            left: ${left}%;
+                            top: ${top}%;
+                            animation-delay: -${delay}s;
+                            animation-duration: ${duration}s;
+                        `;
+                        fragment.appendChild(circle);
+                    }
+                    document.body.appendChild(fragment);
+                }
+                createFloatingCircles();
 
                 const themeToggle = document.getElementById("themeToggle");
                 const prefersDarkScheme = window.matchMedia(
@@ -1939,7 +1829,6 @@
                     }, 300);
                 });
 
-                // PDF Export via Print dialog (texto seleccionable)
                 const pdfExportBtn = document.getElementById("pdfExportBtn");
                 pdfExportBtn.addEventListener("click", function () {
                     showNotification(
@@ -1996,31 +1885,6 @@
 
                 document.getElementById("copyrightText").textContent =
                     `© ${new Date().getFullYear()} Antonio Kibsaim — 20+ Years of Development Excellence`;
-
-                document
-                    .getElementById("githubLink")
-                    .addEventListener("click", function (e) {
-                        e.preventDefault();
-                        showNotification(
-                            "🐙 GitHub profile would open in a real implementation!",
-                        );
-                    });
-                document
-                    .getElementById("linkedinLink")
-                    .addEventListener("click", function (e) {
-                        e.preventDefault();
-                        showNotification(
-                            "💼 LinkedIn profile would open in a real implementation!",
-                        );
-                    });
-                document
-                    .getElementById("contactLink")
-                    .addEventListener("click", function (e) {
-                        e.preventDefault();
-                        showNotification(
-                            "✉️ Contact form would open in a real implementation!",
-                        );
-                    });
 
                 function showNotification(message) {
                     const existing = document.querySelector(".notification");
@@ -2106,12 +1970,6 @@
                             }
                         });
                     });
-
-                console.log("✅ CV Portfolio ready — Antonio Kibsaim 2025/2026");
-                console.log(
-                    "📄 PDF export via Print dialog (Ctrl+P / Cmd+P) → Save as PDF",
-                );
-                console.log("💡 The PDF will have fully selectable text!");
             })();
         </script>
     </body>
