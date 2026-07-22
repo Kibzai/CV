@@ -5,13 +5,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Antonio Kibsaim Mejia Zepeda - Senior Fullstack Architect & DevOps Engineer with 20+ years specializing in V8 engine optimization and cloud-native infrastructure."
+            content="Antonio Kibsaim Mejia Zepeda - Senior Full-Stack Software Engineer | Software Architect | DevOps & Cloud Engineer with 20+ years of experience in enterprise web applications, V8 optimization, and cloud-native infrastructure."
         />
         <meta name="author" content="Antonio Kibsaim Mejia Zepeda" />
         <meta name="robots" content="index, follow" />
+        <meta name="keywords" content="Senior Full-Stack Engineer, Software Architect, DevOps, Cloud Engineer, JavaScript, TypeScript, Node.js, React, Vue, Angular, V8, Web Performance, Mexico City, Remote" />
         <title>
-            Antonio Kibsaim - Senior Fullstack Architect | CV 2025/2026
+            Antonio Kibsaim Mejia Zepeda — Senior Full-Stack Software Engineer | Software Architect | DevOps & Cloud Engineer | CV 2025/2026
         </title>
+
+        <!-- Open Graph / Social -->
+        <meta property="og:title" content="Antonio Kibsaim Mejia Zepeda — Senior Full-Stack Software Engineer | Software Architect" />
+        <meta property="og:description" content="20+ years of experience in full-stack development, cloud architecture, DevOps, and web performance engineering. Specialized in JavaScript/TypeScript, V8 engine internals, and enterprise banking applications." />
+        <meta property="og:type" content="profile" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="profile:first_name" content="Antonio Kibsaim" />
+        <meta property="profile:last_name" content="Mejia Zepeda" />
+
+        <!-- Structured Data for ATS / Google -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Antonio Kibsaim Mejia Zepeda",
+                "jobTitle": "Senior Full-Stack Software Engineer | Software Architect | DevOps & Cloud Engineer",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Mexico City",
+                    "addressCountry": "Mexico"
+                },
+                "description": "Senior Full-Stack Software Engineer, Software Architect, and DevOps Engineer with 20+ years of hands-on experience in software development and 10+ years delivering enterprise web applications and digital platforms. Specialized in JavaScript/TypeScript, Node.js, Java, Spring Boot, React, Vue, Angular, REST APIs, GraphQL, microservices, cloud architecture, DevOps, and web performance engineering.",
+                "knowsLanguage": ["Spanish", "English"],
+                "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Universidad Autónoma Metropolitana (UAM)"
+                },
+                "hasOccupation": {
+                    "@type": "Occupation",
+                    "name": "Software Engineer",
+                    "occupationLocation": {
+                        "@type": "City",
+                        "name": "Mexico City"
+                    }
+                }
+            }
+        </script>
 
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link
@@ -221,10 +259,11 @@
                 letter-spacing: -0.5px;
             }
             .title {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 opacity: 0.9;
                 margin-bottom: 0.3rem;
                 animation: fadeInUp 1s ease 0.3s both;
+                font-weight: 500;
             }
             .header-subtitle {
                 font-size: 1.1rem;
@@ -233,6 +272,7 @@
                 margin-top: 0.5rem;
                 position: relative;
                 min-height: 1.5rem;
+                white-space: nowrap;
             }
             .header-location {
                 display: inline-block;
@@ -254,8 +294,8 @@
                 display: inline-block;
                 background: linear-gradient(
                     135deg,
-                    var(--neon-pink),
-                    var(--azure-blue)
+                    var(--azure-blue),
+                    var(--tropical-mint)
                 );
                 color: white;
                 padding: 0.6rem 1.5rem;
@@ -357,6 +397,12 @@
             .card:nth-child(6) {
                 animation-delay: 0.6s;
             }
+            .card:nth-child(7) {
+                animation-delay: 0.7s;
+            }
+            .card:nth-child(8) {
+                animation-delay: 0.8s;
+            }
             @keyframes slideUpFade {
                 from {
                     opacity: 0;
@@ -402,6 +448,17 @@
             }
             .card h2 i {
                 color: var(--primary);
+            }
+            .card h3 {
+                color: var(--primary);
+                margin: 1rem 0 0.6rem;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .card h3 i {
+                color: var(--accent-3);
             }
 
             .skills-list {
@@ -499,6 +556,17 @@
             .duration i {
                 color: var(--accent-3);
             }
+            .client-tag {
+                display: inline-block;
+                background: var(--accent-1);
+                color: var(--success);
+                font-size: 0.8rem;
+                font-weight: 600;
+                padding: 0.2rem 0.7rem;
+                border-radius: 15px;
+                margin-bottom: 0.5rem;
+                border: 1px solid rgba(131, 56, 236, 0.2);
+            }
             .description {
                 color: var(--text-secondary);
                 font-size: 0.95rem;
@@ -538,6 +606,7 @@
                 color: var(--text-secondary);
                 margin-bottom: 1rem;
                 line-height: 1.7;
+                font-size: 0.95rem;
             }
             .language {
                 display: flex;
@@ -606,6 +675,16 @@
             .expertise-tag:focus-visible {
                 outline: 3px solid var(--primary);
                 outline-offset: 2px;
+            }
+            .expertise-tag.highlight-tag {
+                border-color: var(--tropical-mint);
+                background: rgba(16, 249, 187, 0.08);
+            }
+            .expertise-tag.highlight-tag:hover {
+                background: var(--tropical-mint);
+                border-color: var(--tropical-mint);
+                color: #000;
+                box-shadow: 0 5px 15px rgba(16, 249, 187, 0.35);
             }
 
             .achievement-card {
@@ -679,6 +758,11 @@
             }
             strong {
                 color: var(--primary);
+            }
+            .text-muted {
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+                opacity: 0.8;
             }
 
             footer {
@@ -890,12 +974,13 @@
                     padding: 0 10px;
                 }
                 .title {
-                    font-size: 1rem;
+                    font-size: 0.9rem;
                     padding: 0 10px;
                 }
                 .header-subtitle {
                     font-size: 0.95rem;
                     padding: 0 10px;
+                    white-space: normal;
                 }
                 .experience-badge {
                     font-size: 0.9rem;
@@ -975,7 +1060,7 @@
                     font-size: 1.5rem;
                 }
                 .title {
-                    font-size: 0.9rem;
+                    font-size: 0.8rem;
                 }
                 .header-subtitle {
                     font-size: 0.85rem;
@@ -1050,13 +1135,13 @@
                     color: #ffffff !important;
                 }
                 header .title {
-                    font-size: 7pt !important;
+                    font-size: 6.5pt !important;
                     line-height: 1 !important;
                     margin: 0 0 2px 0 !important;
                     color: #e0e0ff !important;
                 }
                 header .header-subtitle {
-                    font-size: 7pt !important;
+                    font-size: 6.5pt !important;
                     line-height: 1 !important;
                     margin: 0 !important;
                     min-height: 0 !important;
@@ -1106,6 +1191,11 @@
                 .card h2 i {
                     color: #3a86ff !important;
                     font-size: 7pt !important;
+                }
+                .card h3 {
+                    font-size: 7pt !important;
+                    color: #3a86ff !important;
+                    margin: 0.04in 0 0.02in 0 !important;
                 }
                 .skills-list {
                     display: flex !important;
@@ -1207,6 +1297,14 @@
                     margin: 1px 0 !important;
                     color: #3a86ff !important;
                 }
+                .client-tag {
+                    font-size: 5.5pt !important;
+                    padding: 1px 5px !important;
+                    margin-bottom: 2px !important;
+                    background: #f0edff !important;
+                    color: #8338ec !important;
+                    border: 1px solid #d5cef0 !important;
+                }
                 .duration {
                     font-size: 6pt !important;
                     line-height: 1 !important;
@@ -1274,6 +1372,9 @@
                     font-size: 6.5pt !important;
                     margin-right: 4px !important;
                 }
+                .text-muted {
+                    font-size: 5.5pt !important;
+                }
                 a {
                     color: #3a86ff !important;
                     text-decoration: none !important;
@@ -1313,12 +1414,12 @@
             <div class="container">
                 <h1 class="name">ANTONIO KIBSAIM MEJIA ZEPEDA</h1>
                 <p class="title">
-                    Senior Fullstack Architect & DevOps Engineer
+                    SENIOR FULL-STACK SOFTWARE ENGINEER | SOFTWARE ARCHITECT | DEVOPS & CLOUD ENGINEER
                 </p>
-                <p class="header-subtitle" id="typingText">Engine & Performance Optimization Expert</p>
+                <p class="header-subtitle" id="typingText">Delivering enterprise-scale solutions for global financial institutions</p>
                 <span class="header-location">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    CDMX | Mexico
+                    Mexico City, Mexico | Remote | English & Spanish
                 </span>
                 <br />
                 <button
@@ -1326,94 +1427,114 @@
                     id="experienceBadge"
                     aria-label="20+ years experience - click to scroll to experience"
                 >
-                    <i class="fas fa-rocket" aria-hidden="true"></i> 20+ Years
-                    of Programming Excellence
+                    <i class="fas fa-rocket" aria-hidden="true"></i> Everything is programmable
                 </button>
             </div>
         </header>
 
         <div class="container">
             <div class="main-content">
+                <!-- SIDEBAR -->
                 <div>
+                    <!-- CORE SKILLS -->
                     <div class="card">
                         <h2>
-                            <i class="fas fa-bolt" aria-hidden="true"></i> Core
-                            Competencies
+                            <i class="fas fa-bolt" aria-hidden="true"></i> Core Skills
                         </h2>
+                        <h3><i class="fas fa-code" aria-hidden="true"></i> Languages</h3>
                         <div class="skills-list">
-                            <span class="skill-tag highlight-tag" tabindex="0">JavaScript/TS</span>
-                            <span class="skill-tag highlight-tag" tabindex="0">Python</span>
-                            <span class="skill-tag" tabindex="0">PHP</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">JavaScript</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">TypeScript</span>
                             <span class="skill-tag" tabindex="0">Java</span>
-                            <span class="skill-tag" tabindex="0">Rust</span>
-                            <span class="skill-tag" tabindex="0">C++</span>
+                            <span class="skill-tag" tabindex="0">Python</span>
+                            <span class="skill-tag" tabindex="0">HTML5</span>
+                            <span class="skill-tag" tabindex="0">CSS</span>
+                            <span class="skill-tag" tabindex="0">SQL</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <h2>
-                            <i class="fas fa-microchip" aria-hidden="true"></i>
-                            Frontend & Engines
-                        </h2>
+                        <h3><i class="fas fa-laptop-code" aria-hidden="true"></i> Frontend</h3>
                         <div class="skills-list">
-                            <span class="skill-tag" tabindex="0">React / Vue / Angular</span>
+                            <span class="skill-tag" tabindex="0">React</span>
+                            <span class="skill-tag" tabindex="0">Vue.js</span>
+                            <span class="skill-tag" tabindex="0">Angular</span>
+                            <span class="skill-tag" tabindex="0">Svelte</span>
                             <span class="skill-tag" tabindex="0">Web Components</span>
-                            <span class="skill-tag" tabindex="0">PWA / SPA</span>
-                            <span class="skill-tag highlight-tag" tabindex="0">V8 Internals</span>
-                            <span class="skill-tag highlight-tag" tabindex="0">JIT Compilation</span>
-                            <span class="skill-tag highlight-tag" tabindex="0">Garbage Collection</span>
-                            <span class="skill-tag" tabindex="0">Browser Rendering Pipeline</span>
+                            <span class="skill-tag" tabindex="0">PWA</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">V8 Engine</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">Web Performance</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <h2>
-                            <i class="fas fa-database" aria-hidden="true"></i>
-                            Backend & Data
-                        </h2>
+                        <h3><i class="fas fa-server" aria-hidden="true"></i> Backend & Data</h3>
                         <div class="skills-list">
                             <span class="skill-tag" tabindex="0">Node.js</span>
                             <span class="skill-tag" tabindex="0">Spring Boot</span>
-                            <span class="skill-tag" tabindex="0">GraphQL / REST</span>
+                            <span class="skill-tag" tabindex="0">REST APIs</span>
+                            <span class="skill-tag" tabindex="0">GraphQL</span>
                             <span class="skill-tag" tabindex="0">Microservices</span>
-                            <span class="skill-tag" tabindex="0">MongoDB</span>
                             <span class="skill-tag" tabindex="0">PostgreSQL</span>
+                            <span class="skill-tag" tabindex="0">MongoDB</span>
                             <span class="skill-tag" tabindex="0">Redis</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <h2>
-                            <i class="fas fa-cloud" aria-hidden="true"></i>
-                            DevOps & Cloud
-                        </h2>
+                        <h3><i class="fas fa-cloud" aria-hidden="true"></i> Cloud & DevOps</h3>
                         <div class="skills-list">
+                            <span class="skill-tag highlight-tag" tabindex="0">GCP</span>
+                            <span class="skill-tag" tabindex="0">AWS</span>
+                            <span class="skill-tag" tabindex="0">Azure</span>
                             <span class="skill-tag highlight-tag" tabindex="0">Docker</span>
                             <span class="skill-tag highlight-tag" tabindex="0">Kubernetes</span>
-                            <span class="skill-tag" tabindex="0">AWS / Azure / GCP</span>
                             <span class="skill-tag" tabindex="0">Terraform</span>
                             <span class="skill-tag" tabindex="0">Ansible</span>
-                            <span class="skill-tag" tabindex="0">CI/CD Pipelines</span>
-                            <span class="skill-tag" tabindex="0">Jenkins / GitLab CI</span>
+                            <span class="skill-tag" tabindex="0">Jenkins</span>
+                            <span class="skill-tag" tabindex="0">GitLab CI/CD</span>
+                        </div>
+                        <h3><i class="fas fa-vial" aria-hidden="true"></i> Testing & Automation</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag" tabindex="0">TDD</span>
+                            <span class="skill-tag" tabindex="0">Automated Testing</span>
+                            <span class="skill-tag" tabindex="0">E2E Testing</span>
+                            <span class="skill-tag" tabindex="0">Puppeteer</span>
+                            <span class="skill-tag" tabindex="0">Playwright</span>
+                            <span class="skill-tag" tabindex="0">Visual Regression</span>
+                        </div>
+                        <h3><i class="fas fa-shield-alt" aria-hidden="true"></i> Architecture & Security</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag" tabindex="0">System Design</span>
+                            <span class="skill-tag" tabindex="0">Data Modeling</span>
+                            <span class="skill-tag" tabindex="0">Auth & Permissions</span>
+                            <span class="skill-tag" tabindex="0">App Security</span>
+                            <span class="skill-tag" tabindex="0">Zero-Downtime Ops</span>
                         </div>
                     </div>
 
+                    <!-- PERFORMANCE ARSENAL -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
                             Performance Arsenal
                         </h2>
                         <div class="skills-list">
-                            <span class="skill-tag highlight-tag" tabindex="0">Lighthouse Profiling</span>
-                            <span class="skill-tag" tabindex="0">Memory Leak Detection</span>
-                            <span class="skill-tag" tabindex="0">Critical CSS</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">V8 Heap Snapshots</span>
+                            <span class="skill-tag highlight-tag" tabindex="0">Memory Leak Detection</span>
                             <span class="skill-tag" tabindex="0">Lazy Loading</span>
                             <span class="skill-tag" tabindex="0">CDN Strategy</span>
+                            <span class="skill-tag" tabindex="0">Critical Rendering Path</span>
+                            <span class="skill-tag" tabindex="0">Lighthouse</span>
                             <span class="skill-tag highlight-tag" tabindex="0">WebAssembly</span>
-                            <span class="skill-tag" tabindex="0">TTI Optimization</span>
+                            <span class="skill-tag" tabindex="0">Memory Management</span>
+                        </div>
+                        <div class="engine-expertise">
+                            <h3>
+                                <i class="fas fa-cogs" aria-hidden="true"></i>
+                                Engine & Performance Expertise
+                            </h3>
+                            <span class="expertise-tag highlight-tag" tabindex="0">V8 Engine Optimization</span>
+                            <span class="expertise-tag" tabindex="0">JIT Compilation</span>
+                            <span class="expertise-tag highlight-tag" tabindex="0">Garbage Collection</span>
+                            <span class="expertise-tag" tabindex="0">Browser DevTools</span>
+                            <span class="expertise-tag highlight-tag" tabindex="0">Performance Profiling</span>
+                            <span class="expertise-tag" tabindex="0">Browser Rendering Pipeline</span>
                         </div>
                     </div>
 
+                    <!-- LANGUAGES -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-language" aria-hidden="true"></i>
@@ -1428,35 +1549,73 @@
                         <div class="language">
                             <i class="fas fa-comment" aria-hidden="true"></i>
                             <div>
-                                <strong>English</strong> &mdash; Professional
-                                Working Proficiency (B2/C1)
+                                <strong>English</strong> &mdash; Professional Working Proficiency
                             </div>
+                        </div>
+                        <p class="text-muted" style="margin-top: 0.5rem;">Technical Communication, Documentation & Presentations</p>
+                    </div>
+
+                    <!-- EDUCATION -->
+                    <div class="card">
+                        <h2>
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            Education
+                        </h2>
+                        <p style="font-weight: 700; margin-bottom: 0.3rem;">Universidad Autónoma Metropolitana (UAM)</p>
+                        <p class="text-muted">Communication Sciences — Art & Digital Design / Computer Studies Focus</p>
+                        <p class="text-muted">2012 – 2016 | Incomplete Studies</p>
+                    </div>
+
+                    <!-- PROFESSIONAL DEVELOPMENT -->
+                    <div class="card">
+                        <h2>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
+                            Professional Development
+                        </h2>
+                        <p style="font-weight: 700; margin-bottom: 0.3rem;">CS50x — Introduction to Computer Science</p>
+                        <p class="text-muted">Harvard University</p>
+                        <p class="text-muted" style="font-size: 0.85rem;">Algorithms, data structures, memory, security, software engineering, web development — C, Python, SQL, JavaScript, HTML, CSS.</p>
+                        <p style="margin-top: 0.8rem; font-weight: 600;">Additional Technical Training:</p>
+                        <div class="skills-list">
+                            <span class="skill-tag" tabindex="0">Angular</span>
+                            <span class="skill-tag" tabindex="0">React</span>
+                            <span class="skill-tag" tabindex="0">Vue.js</span>
+                            <span class="skill-tag" tabindex="0">Svelte</span>
+                            <span class="skill-tag" tabindex="0">Node.js</span>
+                            <span class="skill-tag" tabindex="0">TypeScript</span>
+                            <span class="skill-tag" tabindex="0">Bun</span>
+                            <span class="skill-tag" tabindex="0">Java</span>
+                            <span class="skill-tag" tabindex="0">Spring Boot</span>
+                            <span class="skill-tag" tabindex="0">Docker</span>
+                            <span class="skill-tag" tabindex="0">Kubernetes</span>
+                            <span class="skill-tag" tabindex="0">CI/CD</span>
+                            <span class="skill-tag" tabindex="0">Cloud Architecture</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- MAIN CONTENT -->
                 <div>
+                    <!-- PROFESSIONAL SUMMARY -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-user-astronaut" aria-hidden="true"></i>
                             Professional Summary
                         </h2>
                         <p class="about-text">
-                            Senior Software Engineer with
-                            <strong>20+ years of experience</strong> in the full
-                            software development lifecycle. Specialized in
-                            <strong>browser engine internals (V8)</strong> and
-                            <strong>cloud-native infrastructure</strong>, I
-                            bridge the gap between cutting-edge frontend
-                            performance and scalable backend architecture.
+                            Senior Full-Stack Software Engineer, Software Architect, and DevOps Engineer with <strong>20+ years of hands-on experience</strong> in software development and <strong>10+ years delivering enterprise web applications</strong> and digital platforms. Experienced in designing, developing, and optimizing high-scale systems across the full software development lifecycle, from frontend architecture and backend services to cloud infrastructure, CI/CD, automated testing, and production operations.
                         </p>
                         <p class="about-text">
-                            Currently focused on leading teams to deliver
-                            <span class="metric-highlight">sub-second load times</span>
-                            and
-                            <span class="metric-highlight">99.99% uptime</span>
-                            through advanced DevOps practices and frontend
-                            optimization.
+                            Specialized in <strong>JavaScript/TypeScript, Node.js, Java, Spring Boot, React, Vue, Angular, REST APIs, GraphQL, microservices, cloud architecture, DevOps, and web performance engineering</strong>. Strong experience delivering solutions for global financial institutions including <strong>HSBC, BBVA, and Citibanamex</strong>.
+                        </p>
+                        <p class="about-text">
+                            Experienced working with global-scale banking ecosystems serving millions of users, zero-downtime operational requirements, production triage, cloud services, API integration, data architecture, application security, and continuous delivery.
+                        </p>
+                        <p class="about-text">
+                            Performance-focused engineer with hands-on expertise in <strong>V8 memory analysis, memory leak detection, browser rendering, Web Performance Optimization, WebAssembly, automated browser testing, and CI/CD quality automation</strong>.
+                        </p>
+                        <p class="about-text">
+                            Mentor-oriented technical leader who combines architecture, hands-on engineering, business logic, and cross-functional collaboration to deliver scalable, secure, reliable, and maintainable systems.
                         </p>
                         <div class="quote-block">
                             <i
@@ -1466,163 +1625,231 @@
                             ></i>
                             Everything is programmable.
                         </div>
-                        <div class="engine-expertise">
-                            <h3>
-                                <i class="fas fa-cogs" aria-hidden="true"></i>
-                                Engine & Performance Expertise
-                            </h3>
-                            <span class="expertise-tag" tabindex="0">V8 Engine Optimization</span>
-                            <span class="expertise-tag" tabindex="0">Memory Management</span>
-                            <span class="expertise-tag" tabindex="0">JIT Compilation</span>
-                            <span class="expertise-tag" tabindex="0">Garbage Collection</span>
-                            <span class="expertise-tag" tabindex="0">Browser DevTools</span>
-                            <span class="expertise-tag" tabindex="0">Performance Profiling</span>
-                            <span class="expertise-tag" tabindex="0">Critical Rendering Path</span>
-                        </div>
                     </div>
 
-                    <div class="card">
+                    <!-- PROFESSIONAL EXPERIENCE -->
+                    <div class="card" id="professionalExperienceCard">
                         <h2>
                             <i class="fas fa-briefcase" aria-hidden="true"></i>
                             Professional Experience
                         </h2>
+
+                        <!-- HSBC -->
                         <div class="experience-item">
-                            <div class="company">
-                                HSBC Global Service Center
-                            </div>
+                            <div class="company">HSBC</div>
                             <div class="role">
-                                Senior Fullstack Developer & DevOps Lead
+                                Senior Software Engineer — Global Applications & Production Triage
                             </div>
                             <div class="duration">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                2024 &mdash; 2025
+                                2024 – 2025
                             </div>
                             <ul class="description">
                                 <li>
-                                    Architected a containerized banking
-                                    ecosystem using Docker & Kubernetes reducing
-                                    deployment failures by
-                                    <span class="metric-highlight">40%</span>.
+                                    Supported applications and services operating at <strong>global banking scale</strong>, within an ecosystem serving <span class="metric-highlight">millions of users worldwide</span>.
                                 </li>
                                 <li>
-                                    Led migration of legacy services to
-                                    microservices architecture, improving system
-                                    resilience and scalability.
+                                    Participated in global production triage, investigating incidents across frontend, backend, APIs, cloud infrastructure, and distributed services.
                                 </li>
                                 <li>
-                                    Optimized frontend delivery, slashing page
-                                    load times by
-                                    <span class="metric-highlight">~2 seconds</span>
-                                    through aggressive code-splitting and image
-                                    optimization.
+                                    Collaborated with global engineering teams to diagnose incidents, coordinate remediation, and deploy production changes under <strong>zero-downtime</strong> operational requirements.
                                 </li>
                                 <li>
-                                    Implemented TDD and integrated automated
-                                    performance gates into the CI/CD pipeline to
-                                    prevent regressions.
+                                    Implemented frontend, backend integration, API, UX, data visualization, and business logic changes across multiple enterprise applications using <strong>Vue.js and React</strong>.
+                                </li>
+                                <li>
+                                    Worked with <strong>Google Cloud Platform (GCP)</strong> and participated in architecture and cloud-cost decisions involving scalability, infrastructure, and operational requirements.
+                                </li>
+                                <li>
+                                    Contributed to consolidating two separate applications into a unified solution, automating an end-to-end service workflow and increasing reported operational productivity by approximately <span class="metric-highlight">150%</span>.
                                 </li>
                             </ul>
                         </div>
+
+                        <!-- IBM BBVA -->
                         <div class="experience-item">
-                            <div class="company">
-                                IBM (BBVA: Continuum Project)
-                            </div>
+                            <div class="company">IBM</div>
                             <div class="role">
-                                Web Performance Specialist
+                                Senior Frontend Architect — Full-Stack Architect — Technical Lead
                             </div>
                             <div class="duration">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                2020 &mdash; 2022
+                                2020 – 2022
                             </div>
+                            <span class="client-tag">Client: BBVA</span>
                             <ul class="description">
                                 <li>
-                                    Reduced initial load time (LCP) by
-                                    <span class="metric-highlight">35%</span>
-                                    by optimizing the Critical Rendering Path
-                                    and implementing resource prioritization.
+                                    Architected and developed a <strong>global internal enterprise application from the ground up</strong> supporting complex banking business logic and operational workflows.
                                 </li>
                                 <li>
-                                    Developed automated performance monitoring
-                                    suites using Puppeteer and Lighthouse CI.
+                                    Designed frontend architecture for an enterprise application supporting <span class="metric-highlight">thousands of globally distributed users</span> with approximately <span class="metric-highlight">99%+ availability</span>.
                                 </li>
                                 <li>
-                                    Authored internal documentation on V8 engine
-                                    optimization used as a reference by
-                                    <span class="metric-highlight">+50 developers</span>.
+                                    Designed administrative systems for user management, permissions, access control, and large-scale data operations.
+                                </li>
+                                <li>
+                                    Architected permission systems combining indexed datasets, permission tables, and <strong>cloud-based validation services</strong>.
+                                </li>
+                                <li>
+                                    Integrated <strong>Google Cloud Platform and Cloud Functions</strong> into enterprise application workflows.
+                                </li>
+                                <li>
+                                    Designed and integrated APIs connecting frontend applications with backend services and internal systems.
+                                </li>
+                                <li>
+                                    Designed automated regression workflows covering complex decision trees and business-critical user journeys using <strong>Puppeteer</strong>.
+                                </li>
+                                <li>
+                                    Combined <strong>Puppeteer + pdf-lib</strong> to securely generate complex PDF reports in controlled server environments.
+                                </li>
+                            </ul>
+                            <span class="client-tag" style="margin-top: 0.6rem;">Client: AEP</span>
+                            <ul class="description" style="margin-top: 0.3rem;">
+                                <li>
+                                    Developed data visualization interfaces for large and complex datasets.
+                                </li>
+                                <li>
+                                    Implemented interactive charts and large-scale data tables.
+                                </li>
+                                <li>
+                                    Built server-side PDF generation workflows using <strong>Puppeteer and pdf-lib</strong>, transforming complex web-based visualizations into structured, presentation-ready PDF reports.
                                 </li>
                             </ul>
                         </div>
+
+                        <!-- Nova Solutions Citibanamex -->
                         <div class="experience-item">
-                            <div class="company">
-                                NOVA SOLUTION SYSTEMS (Citi Banamex)
-                            </div>
+                            <div class="company">Nova Solutions</div>
                             <div class="role">
-                                Technical Lead & Angular Architect
+                                Senior Frontend / Mobile Application Engineer
                             </div>
                             <div class="duration">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                2019 &mdash; 2020
+                                2019 – 2020
                             </div>
+                            <span class="client-tag">Client: Citibanamex</span>
                             <ul class="description">
                                 <li>
-                                    Led development of Web Remote Account
-                                    Opening system supporting
-                                    <span class="metric-highlight">2M+ active users</span>.
+                                    Developed a <strong>mobile customer onboarding platform from the ground up</strong> for a major financial institution.
                                 </li>
                                 <li>
-                                    Implemented advanced Change Detection and
-                                    Lazy Loading, resulting in a
-                                    <span class="metric-highlight">50%</span>
-                                    reduction in bundle size for the main route.
+                                    Designed complex multi-step onboarding workflows with extensive decision trees and business rules.
                                 </li>
                                 <li>
-                                    Integrated facial recognition APIs ensuring
-                                    compliance with strict banking security
-                                    standards (OWASP).
+                                    Integrated <strong>OCR, identity document recognition, facial recognition, and customer data validation services</strong>.
+                                </li>
+                                <li>
+                                    Developed reusable internal frontend libraries and NPM packages to standardize application behavior.
+                                </li>
+                                <li>
+                                    Created a custom gesture-driven carousel component based on interaction patterns from Hammer.js.
+                                </li>
+                                <li>
+                                    Implemented frontend validation and secure user workflows under <strong>strict financial security requirements</strong>.
                                 </li>
                             </ul>
                         </div>
+
+                        <!-- Grupo TV Promo -->
                         <div class="experience-item">
-                            <div class="company">GRUPO TVPROMO</div>
+                            <div class="company">Grupo TV Promo</div>
                             <div class="role">
-                                Frontend Architect & Project Manager
+                                Web / Frontend Lead
                             </div>
                             <div class="duration">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                2016 &mdash; 2019
+                                2016 – 2019
                             </div>
                             <ul class="description">
                                 <li>
-                                    Managed end-to-end digital projects,
-                                    increasing team delivery velocity by
-                                    <span class="metric-highlight">30%</span>
-                                    via Agile methodologies and automated
-                                    deployment workflows.
+                                    Led web and frontend development across enterprise, government, pharmaceutical, consumer, and marketing projects.
                                 </li>
                                 <li>
-                                    Designed system architectures and interactive
-                                    dashboards used for real-time data analytics
-                                    by executive stakeholders.
+                                    Designed and developed websites, interactive applications, promotional platforms, surveys, and browser-based games.
+                                </li>
+                                <li>
+                                    Worked with PHP, HTML, JavaScript, backend integration, databases, and web infrastructure.
+                                </li>
+                                <li>
+                                    Managed self-hosted and rented server environments supporting digital campaigns.
+                                </li>
+                                <li>
+                                    Delivered high-availability websites and interactive experiences for large promotional launches.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Mind Productions -->
+                        <div class="experience-item">
+                            <div class="company">Mind Productions</div>
+                            <div class="role">
+                                Art Director / Web Developer
+                            </div>
+                            <div class="duration">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                2013 – 2016
+                            </div>
+                            <ul class="description">
+                                <li>
+                                    Designed and developed event websites, digital platforms, visual identities, and promotional campaigns.
+                                </li>
+                                <li>
+                                    Created digital and visual production for events ranging from private experiences to large-scale productions with thousands of attendees.
+                                </li>
+                                <li>
+                                    Delivered integrated web, graphic design, projection, and multimedia solutions for festivals, concerts, DJs, and entertainment events.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Freelance -->
+                        <div class="experience-item">
+                            <div class="company">Freelance</div>
+                            <div class="role">
+                                Web Developer / Computer Technician
+                            </div>
+                            <div class="duration">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                2006 – 2012
+                            </div>
+                            <ul class="description">
+                                <li>
+                                    Began professional work with computers and web technology at approximately <strong>13–14 years old</strong>.
+                                </li>
+                                <li>
+                                    Provided computer repair, operating system installation, software configuration, networking, and technical support.
+                                </li>
+                                <li>
+                                    Developed websites and web applications using HTML, CSS, JavaScript, PHP, Flash, and ActionScript during the pre-HTML5 era.
+                                </li>
+                                <li>
+                                    Delivered websites and digital solutions for institutional, private, and commercial clients.
                                 </li>
                             </ul>
                         </div>
                     </div>
 
+                    <!-- SELECTED TECHNICAL ACHIEVEMENTS -->
                     <div class="card">
                         <h2>
-                            <i class="fas fa-trophy" aria-hidden="true"></i> Key
-                            Achievements
+                            <i class="fas fa-trophy" aria-hidden="true"></i> Selected Technical Achievements
                         </h2>
                         <div class="achievement-card">
                             <h4>
-                                <i class="fas fa-memory" aria-hidden="true"></i>
-                                Engine-Level Debugging
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                                Global Scale
                             </h4>
                             <p>
-                                Diagnosed and fixed memory leaks in a
-                                high-traffic application by analyzing V8 heap
-                                snapshots, stabilizing memory usage for
-                                <strong>48+ hour sessions</strong>.
+                                Supported enterprise banking ecosystems serving <strong>millions of users</strong> with zero-downtime operational requirements.
+                            </p>
+                        </div>
+                        <div class="achievement-card">
+                            <h4>
+                                <i class="fas fa-memory" aria-hidden="true"></i>
+                                Performance Engineering
+                            </h4>
+                            <p>
+                                Diagnosed JavaScript memory leaks through <strong>V8 heap snapshot analysis</strong>, stabilizing applications for 40+ hour continuous sessions.
                             </p>
                         </div>
                         <div class="achievement-card">
@@ -1631,10 +1858,7 @@
                                 WebAssembly Integration
                             </h4>
                             <p>
-                                Successfully integrated WASM modules for a
-                                data-intensive financial simulation, achieving
-                                <strong>near-native performance</strong> in the
-                                browser.
+                                Integrated <strong>WebAssembly modules</strong> into data-intensive browser applications for near-native computational performance.
                             </p>
                         </div>
                         <div class="achievement-card">
@@ -1643,9 +1867,34 @@
                                 Infrastructure as Code
                             </h4>
                             <p>
-                                Designed a fully automated AWS infrastructure
-                                using Terraform, reducing provisioning time from
-                                <strong>days to minutes</strong>.
+                                Automated infrastructure provisioning with <strong>Terraform</strong>, reducing provisioning workflows from days to minutes.
+                            </p>
+                        </div>
+                        <div class="achievement-card">
+                            <h4>
+                                <i class="fas fa-robot" aria-hidden="true"></i>
+                                Automation
+                            </h4>
+                            <p>
+                                Built automated regression, browser testing, and visual validation workflows using <strong>Puppeteer and Playwright</strong>.
+                            </p>
+                        </div>
+                        <div class="achievement-card">
+                            <h4>
+                                <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                                Secure Document Generation
+                            </h4>
+                            <p>
+                                Combined <strong>Puppeteer + pdf-lib</strong> to securely generate complex PDF reports from data-intensive web applications.
+                            </p>
+                        </div>
+                        <div class="achievement-card">
+                            <h4>
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                Productivity
+                            </h4>
+                            <p>
+                                Contributed to consolidating two applications into one automated solution, increasing reported operational productivity by approximately <strong>150%</strong>.
                             </p>
                         </div>
                         <div class="achievement-card">
@@ -1654,15 +1903,12 @@
                                 Mentorship
                             </h4>
                             <p>
-                                Mentored junior developers on JavaScript
-                                performance patterns and CI/CD best practices,
-                                leading to a
-                                <strong>20% increase</strong> in overall team
-                                code quality.
+                                Mentored developers in JavaScript performance, testing, CI/CD, and infrastructure practices, contributing to an estimated <strong>20% improvement</strong> in team code quality.
                             </p>
                         </div>
                     </div>
 
+                    <!-- PROFESSIONAL FOCUS -->
                     <div class="card">
                         <h2>
                             <i class="fas fa-crosshairs" aria-hidden="true"></i>
@@ -1673,8 +1919,10 @@
                             <span class="skill-tag highlight-tag" tabindex="0">Automation Advocate</span>
                             <span class="skill-tag" tabindex="0">Security Mindset</span>
                             <span class="skill-tag" tabindex="0">Mentor & Leader</span>
-                            <span class="skill-tag" tabindex="0">TTI Obsessed</span>
+                            <span class="skill-tag" tabindex="0">Zero-Downtime Obsessed</span>
                             <span class="skill-tag" tabindex="0">IaC Enthusiast</span>
+                            <span class="skill-tag" tabindex="0">Continuous Delivery</span>
+                            <span class="skill-tag" tabindex="0">Business-Driven Engineering</span>
                         </div>
                     </div>
                 </div>
@@ -1693,29 +1941,25 @@
         <footer>
             <div class="container">
                 <p>
-                    Antonio Kibsaim &mdash; Senior Fullstack Architect & DevOps
-                    Engineer
+                    Antonio Kibsaim Mejia Zepeda — Senior Full-Stack Software Engineer | Software Architect | DevOps & Cloud Engineer
                 </p>
                 <div class="footer-links">
                     <a
-                        href="https://github.com/TU_USUARIO"
+                        href="https://github.com/KibsaimMejia"
                         target="_blank"
                         rel="noopener noreferrer"
-                        tabindex="0"
                     >
                         <i class="fab fa-github" aria-hidden="true"></i> GitHub
                     </a>
                     <a
-                        href="https://linkedin.com/in/TU_USUARIO"
+                        href="https://linkedin.com/in/kibsaim-mejia"
                         target="_blank"
                         rel="noopener noreferrer"
-                        tabindex="0"
                     >
                         <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
                     </a>
                     <a
-                        href="mailto:TU_EMAIL@example.com"
-                        tabindex="0"
+                        href="mailto:kibsaim.mejia@protonmail.com"
                     >
                         <i class="fas fa-envelope" aria-hidden="true"></i> Contact
                     </a>
@@ -1737,8 +1981,7 @@
                         color: rgba(255, 255, 255, 0.5);
                     "
                 >
-                    Specializing in Web Performance, V8 Engine Optimization, and
-                    DevOps Automation
+                    Specializing in Web Performance, V8 Engine Optimization, and DevOps Automation
                 </p>
             </div>
         </footer>
@@ -1884,7 +2127,7 @@
                 });
 
                 document.getElementById("copyrightText").textContent =
-                    `© ${new Date().getFullYear()} Antonio Kibsaim — 20+ Years of Development Excellence`;
+                    `© ${new Date().getFullYear()} Antonio Kibsaim Mejia Zepeda — 20+ Years of Development Excellence`;
 
                 function showNotification(message) {
                     const existing = document.querySelector(".notification");
@@ -1900,29 +2143,34 @@
                     }, 3000);
                 }
 
+                /* ----- FIXED TYPEWRITER (cursor stays inline) ----- */
                 const titleElement = document.querySelector(".header-subtitle");
                 if (titleElement) {
                     const originalText = titleElement.textContent.trim();
-                    titleElement.textContent = "";
-                    const cursor = document.createElement("span");
-                    cursor.className = "typing-cursor";
-                    cursor.textContent = "|";
-                    cursor.setAttribute("aria-hidden", "true");
-                    titleElement.parentNode.appendChild(cursor);
+                    titleElement.innerHTML = "";
+                    const textSpan = document.createElement("span");
+                    const cursorSpan = document.createElement("span");
+                    cursorSpan.className = "typing-cursor";
+                    cursorSpan.textContent = "|";
+                    cursorSpan.setAttribute("aria-hidden", "true");
+                    titleElement.appendChild(textSpan);
+                    titleElement.appendChild(cursorSpan);
+
                     let i = 0;
                     function typeWriter() {
                         if (i < originalText.length) {
-                            titleElement.textContent += originalText.charAt(i);
+                            textSpan.textContent += originalText.charAt(i);
                             i++;
                             const speed = Math.random() * 30 + 40;
                             setTimeout(typeWriter, speed);
                         } else {
-                            cursor.style.opacity = "0";
-                            setTimeout(() => cursor.remove(), 500);
+                            cursorSpan.style.opacity = "0";
+                            setTimeout(() => cursorSpan.remove(), 500);
                         }
                     }
                     setTimeout(typeWriter, 1800);
                 }
+                /* ------------------------------------------------- */
 
                 const experienceBadge =
                     document.getElementById("experienceBadge");
@@ -1932,13 +2180,11 @@
                         setTimeout(() => {
                             this.style.transform = "";
                         }, 200);
-                        const firstExperience =
-                            document.querySelector(".experience-item");
-                        if (firstExperience) {
-                            firstExperience.scrollIntoView({
-                                behavior: "smooth",
-                                block: "start",
-                            });
+                        const experienceSection = document.getElementById("professionalExperienceCard");
+                        if (experienceSection) {
+                            const yOffset = -20; /* small offset so it isn't glued to the top */
+                            const y = experienceSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            window.scrollTo({ top: y, behavior: "smooth" });
                         }
                     });
                     experienceBadge.addEventListener("keydown", function (e) {
